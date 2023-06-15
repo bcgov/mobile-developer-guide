@@ -1,0 +1,13 @@
+site_name: "bcmdg"
+site_description: "A guide to mobile application development for the Government of the Province of British Columbia"
+
+nav:
+  - Introduction: index.md
+  - How to start a new mobile app project: initiate.md
+  - Apple App Signing: apple_app_signing.md
+  - Apple Distribution Methods: apple_distribution_methods.md
+  - App Store Connect API Key: app_store_connect_api_key.md
+  - Google App Signing: google_app_signing.md
+  - Google Signing For React Native Apps: google_react_native_signing.md
+plugins:
+  - techdocs-core

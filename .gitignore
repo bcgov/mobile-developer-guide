@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# Node version directives
+.nvmrc
+
+# Temporary change files created by Vim
+*.swp
+
+# vscode workspace
+*.code-workspace
+
+# git
+.git
