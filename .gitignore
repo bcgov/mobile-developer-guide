@@ -16,3 +16,6 @@ logs
 
 # git
 .git
+
+# MkDocs build output
+site
