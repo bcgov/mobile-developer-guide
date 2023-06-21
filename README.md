@@ -1,6 +1,6 @@
 ![Lifecycle Experimental](https://img.shields.io/badge/Lifecycle-Experimental-339999 "The contents of this repositroy represent work that is in its early stages")
 
-# bcmdg
+# mobile-developer-guide
 Repository for the BC Mobile Developer's Guide
 
 ## Copyright
