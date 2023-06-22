@@ -1,8 +1,11 @@
-name: Publish TechDocs Site
+name: Publish TechDocs
 
 on:
   push:
     branches: [main, actions]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
 jobs:
   publish-techdocs-site:
     runs-on: ubuntu-latest
