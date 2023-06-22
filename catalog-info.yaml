@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "bcmdg"
+  name: "mobile-developer-guide"
   description: "A guide to mobile application development for the Government of the Province of British Columbia"
   annotations:
-    github.com/project-slug: bcgov/bcmdg
+    github.com/project-slug: bcgov/mobile-developer-guide
     backstage.io/techdocs-ref: dir:.
 spec:
   type: documentation
