@@ -1,4 +1,4 @@
-# Mobile App Distribution Methods
+# Mobile App Distribution Methods - TEST
 
 Mobile apps are distributed either through the public app stores or   MDM InTune. Please review the diagram below to determine the distribution method for your app.
 
