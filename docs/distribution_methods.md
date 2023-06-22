@@ -1,8 +1,8 @@
-# Mobile App Distribution Methods - TEST
+# Mobile App Distribution Methods - TEST2
 
 Mobile apps are distributed either through the public app stores or   MDM InTune. Please review the diagram below to determine the distribution method for your app.
 
-![Diagram of the various distribution methods. If the app is for the general public, it is distributed via the Apple App Store and Google Play Stores. If it is an app for Government Employees, it is distributed via MDM inTunes. If it is an app for Employees and Contractors it is distributed as an unlisted app via the Apple App Store](assets/distribution.drawio.svg)
+![Diagram of the various distribution methods. If the app is for the general public, it is distributed via the Apple App Store and Google Play Stores. If it is an app for Government Employees, it is distributed via MDM inTunes. If it is an app for Employees and Contractors it is distributed as an unlisted app via the Apple App Store](assets/distribution.svg)
 
 Public apps are released through the Province's accounts on Apple's App Store and Google's Play Store. You must list your app through the Province's accounts. The developer experience team will assist you in setting up your app on these accounts.  Please refer to the [project initiation](initiate.md) page for the information needed to setup an app. Once setup you will have access to [App Store Connect](https://appstoreconnect.apple.com) and [Google Play Console](https://play.google.com/console/about/) to manage your app.
 
