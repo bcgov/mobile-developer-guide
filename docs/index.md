@@ -1,43 +1,18 @@
-# BC Mobile Developer's Guide
+# Mobile App Development
 
-Welcome to the BC Mobile Developer's Guide. Here you will find information on:
+The Province of BC provides many types of mobile apps to the public. From wild life tracking, to digital ID, to employment services and more.  These apps are available for download on [Apple's App Store](https://apps.apple.com/us/developer/his-majesty-the-king-in-right-of-the/id487323275) and [Google's Play Store](https://play.google.com/store/apps/developer?id=Province+of+British+Columbia,+Canada&hl=en_CA&gl=US). The Province also creates private apps used by its employees for their job functions.
 
-* [how to start a new mobile app project](initiate.md)
-* [how to sign a mobile app](#how-to-sign-a-mobile-app)
-* [how to find support](#how-to-find-support)
-* [quick links](#quick-links)
+The Developer Experience Team will assist you in your mobile app development journey. While we will not code, design or review your app, we will help you:
 
-Please see our [Miro Board](https://miro.com/app/board/o9J_lS6zlUI=/?invite_link_id=120064570090) for illustration of the signing process, please note it should be the `NEW` frames!
+* onboard to the app stores
+* connect with other mobile dev teams, where applicable
+* manage signing certificates
 
+Please book an appointment with us at: [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca) at the start of your project. Find more information about what to expect at the meeting in our [Getting Started](initiate.md) guide.
 
-## How to sign a mobile app 
-Please see the following pages:
+Curious about mobile apps but not sure if you need one? We are happy to [meet and discuss](mailto:Developer.Experience@gov.bc.ca) your scenario.
 
-* [Apple App Signing](apple_app_signing.md)
-* [Google App Signing](google_app_signing.md)
-* [Google Signing for React Native Application](google_react_native_signing.md)
-
-## How to find support
-
+Looking for help? Please find us at:
+* [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca)
 * [#devops-mobile-development channel](https://chat.developer.gov.bc.ca/channel/devops-mobile-development) in RocketChat
-* [Stack Overflow](https://stackoverflow.developer.gov.bc.ca)
-* Send us an email at [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca)
- 
-## Quick Links
-### GitHub
-* [bcgov GitHub organization](https://github.com/bcgov)
-* [working in the bcgov GitHub organization](https://docs.developer.gov.bc.ca/start-working-in-bcgov-github-organization/)
-
-### Mobile Development
-* Contact: [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca)
-* [Overview of process](https://miro.com/app/board/o9J_lS6zlUI=/?invite_link_id=120064570090)
-* App Store roles and permissions
-  * [Apple Roles](https://developer.apple.com/support/roles/)
-  * [Google](https://support.google.com/googleplay/android-developer/answer/9844686) - See the "Permission definitions and uses" section
-
-### Resource Sites
-* [Cloud Services in BC Government](https://cloud.gov.bc.ca)
-* [Cloud Services Technical Documentation](https://docs.developer.gov.bc.ca)
-* [RocketChat](https://chat.developer.gov.bc.ca/)
-  * [RocketChat in BC Government](https://cloud.gov.bc.ca/private-cloud/support-and-community/stay-connected/)
-* [Stack Overflow](https://stackoverflow.developer.gov.bc.ca) 
+* [B.C. Government Stack Overflow](https://stackoverflow.developer.gov.bc.ca)
