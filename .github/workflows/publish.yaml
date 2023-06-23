@@ -6,6 +6,7 @@ on:
     paths:
       - "docs/**"
       - "mkdocs.yml"
+      - "catalog-info.yaml"
 jobs:
   publish-techdocs-site:
     runs-on: ubuntu-latest
