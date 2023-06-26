@@ -1,5 +1,7 @@
 site_name: "mobile-developer-guide"
 site_description: "A guide to mobile application development for the Government of the Province of British Columbia"
+repo_url: https://github.com/bcgov/mobile-developer-guide
+edit_uri: edit/main/docs/
 
 nav:
   - Introduction: index.md
