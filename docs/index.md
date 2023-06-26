@@ -4,9 +4,9 @@ The Province of BC provides many types of mobile apps to the public. From wild l
 
 The Developer Experience Team will assist you in your mobile app development journey. While we will not code, design or review your app, we will help you:
 
-* onboard to the app stores
-* connect with other mobile dev teams, where applicable
-* manage signing certificates
+* Onboard to the app stores
+* Connect with other mobile dev teams
+* Manage signing certificates
 
 Please book an appointment with us at: [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca) at the start of your project. Find more information about what to expect at the meeting in our [Getting Started](initiate.md) guide.
 
