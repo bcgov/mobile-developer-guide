@@ -13,6 +13,7 @@ Please book an appointment with us at: [Developer.Experience@gov.bc.ca](mailto:D
 Curious about mobile apps but not sure if you need one? We are happy to [meet and discuss](mailto:Developer.Experience@gov.bc.ca) your scenario.
 
 Looking for help? Please find us at:
+
 * [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca)
 * [#devops-mobile-development channel](https://chat.developer.gov.bc.ca/channel/devops-mobile-development) in RocketChat
 * [B.C. Government Stack Overflow](https://stackoverflow.developer.gov.bc.ca)
