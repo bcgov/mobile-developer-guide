@@ -1,6 +1,7 @@
 # Managing Your App 
 
 Please provide the Developer Experience Team with the names and email addresses of who will:
+
 * Administer the app
 * Developer the app
 * Respond to user reviews
