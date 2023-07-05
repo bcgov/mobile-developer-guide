@@ -1,6 +1,6 @@
 # Getting Started
 
-You have an idea for an app. You have approval from your ministry and you're excited to start building. However, before diving in, please book an onboarding meeting with the Developer Experience Team at: [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca). This meeting will help us set up your project in the mobile developer accounts. To make the most of our time together, please gather the information outlined below.
+You have an idea for an app. You have approval from your ministry and you're excited to start building. However, before diving in, please book an onboarding meeting with the [Developer Experience Team](contact.md). This meeting will help us set up your project in the mobile developer accounts. To make the most of our time together, please gather the information outlined below.
 
 ## Onboard Meeting Checklist
 

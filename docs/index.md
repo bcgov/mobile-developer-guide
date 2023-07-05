@@ -8,12 +8,6 @@ The Developer Experience Team will assist you in your mobile app development jou
 * Connect with other mobile dev teams
 * Manage signing certificates
 
-Please book an appointment with us at: [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca) at the start of your project. Find more information about what to expect at the meeting in our [Getting Started](getting_started.md) guide.
+Please [contact us](contact.md) to book an appointment at the start of your project. Find more information about what to expect at the meeting in our [Getting Started](getting_started.md) guide.
 
-Curious about mobile apps but not sure if you need one? We are happy to [meet and discuss](mailto:Developer.Experience@gov.bc.ca) your scenario.
-
-Looking for help? Please find us at:
-
-* [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca)
-* [#devops-mobile-development channel](https://chat.developer.gov.bc.ca/channel/devops-mobile-development) in RocketChat
-* [B.C. Government Stack Overflow](https://stackoverflow.developer.gov.bc.ca)
+Curious about mobile apps but not sure if you need one? We are happy to meet and discuss your scenario. Please [connect with us](contact.md)!
