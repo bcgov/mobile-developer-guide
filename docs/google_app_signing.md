@@ -19,7 +19,7 @@ Please refer to Google's [Play App Signing](https://developer.android.com/studio
 
 The upload key signs your app for upload to the Google Play Store. The team's app release manager should [create the upload key](https://developer.android.com/studio/publish/app-signing#sign-apk). 
 
-If your app's code is in the [bcgov GitHub organization](https://github.com/bcgov), then please use a [GitHub Action](https://docs.github.com/en/actions) to build and sign your app with the upload key. Store the key ([encoded as base64](https://docs.github.com/en/actions/security-guides/encrypted-secrets#storing-base64-binary-blobs-as-secrets)), its alias and the password as a [secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets) in your app's repo. 
+If your app's code is in the [bcgov GitHub organization](https://github.com/bcgov), then please use a [GitHub Action](https://docs.github.com/en/actions) to build and sign your app with the upload key. Refer to Google's [Sign your app from command line](https://developer.android.com/build/building-cmdline) documentation for instructions on how to do this. Store the key ([encoded as base64](https://docs.github.com/en/actions/security-guides/encrypted-secrets#storing-base64-binary-blobs-as-secrets)), its alias and the password as a [secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets) in your app's repo. 
 
 
 See the [bc-wallet-mobile](https://github.com/bcgov/bc-wallet-mobile/blob/main/.github/workflows/main.yaml) project for an example of a project using GitHub Actions.
