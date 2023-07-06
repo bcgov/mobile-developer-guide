@@ -1,20 +1,28 @@
 # Google Signing For React Native Apps
 
 ## Prerequisite
-Your app must be setup to use [Google Play App Signing](Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) and have an [upload key](). Please see the [Google App Signing](google_app_signing.md) guide for more details.
+Your app must be setup to use [Google Play App Signing](Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) and have an [upload key](https://developer.android.com/studio/publish/app-signing#sign-apk). Please see the [Google App Signing](google_app_signing.md) guide for more details.
 
 ## Modify Gradle Files and Sign Release
 
-Now that we got the upload key generated we need to modify the gradle files to have a release config for production builds. The configuration below relies on a .env file that stores:
+Once the prerequisites are met, modify the gradle files to have a release config for production builds. The configuration below assumes the production build will be run from a GitHub Action. It assumes the following are setup as secrets in your GitHub repo.
 
 * KEYSTORE={fileNameFromAbove}.keystore
 * KEY_ALIAS={alias-from-above}
 * STORE_PASSWORD={password-from-above}
 * KEY_PASSWORD={password-from-above}
 
-> MAKE SURE NOT TO COMMIT THE .ENV FILE
+Example:
+```yaml
+ - name: Build APK
+   run: ./gradlew bundleRelease assembleRelease
+   env:
+     KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+     STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+     KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+```
 
-On the file build.gradle add a **release** config under signing config:
+In the `build.gradle` file add a `release` config under signing config:
 
 ```javascript
 signingConfigs {
@@ -45,8 +53,9 @@ Additionally, we need to tell Gradle to use our new config for release builds:
             // Using release from above
             signingConfig signingConfigs.release
         }
-    }
+    }    
 ```
+
 
 Alternatively, you can [sign your release from Android Studio](https://developer.android.com/studio/publish/app-signing#sign_release).
 
