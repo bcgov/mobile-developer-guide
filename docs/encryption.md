@@ -17,4 +17,3 @@ Unlike Apple, Google does not ask for compliance documentation.  Your app is exp
 
 # Your app's compliance
 It is important for you to determine your app's compliance. See the [Encryption and Export Administration Regulations (EAR)](https://www.bis.doc.gov/index.php/policy-guidance/encryption) website for more details.
-
