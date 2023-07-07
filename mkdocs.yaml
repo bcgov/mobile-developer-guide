@@ -8,6 +8,7 @@ nav:
   - Getting Started: getting_started.md
   - Distribution Methods: distribution_methods.md
   - App Management: app_management.md
+  - Developer's Guide: developer.md
   - Apple App Signing: apple_app_signing.md
   - App Store Connect API Key: app_store_connect_api_key.md
   - Google App Signing: google_app_signing.md
