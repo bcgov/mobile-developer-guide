@@ -1,30 +1,33 @@
-# Google Signing For React Native Apps
+# Google signing for React Native apps
+
+
+Refer to React Native's [Publishing to Google Play Store](https://reactnative.dev/docs/signed-apk-android) guide for an overview of app signing. That guide describes how to sign an app from a developer's computer. This page describes how to setup those steps in a CI/CD pipeline using GitHub Actions.
 
 ## Prerequisite
-Your app must be setup to use [Google Play App Signing](Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) and have an [upload key](https://developer.android.com/studio/publish/app-signing#sign-apk). Please see the [Google App Signing](google_app_signing.md) guide for more details.
+Your app must be setup to use [Google Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play).
 
-## Modify Gradle Files and Sign Release
+## Create the upload key
+Follow React Native's [instructions to generate an upload key](https://reactnative.dev/docs/signed-apk-android#generating-an-upload-key).
 
-Once the prerequisites are met, modify the gradle files to have a release config for production builds. The configuration below assumes the production build will be run from a GitHub Action. It assumes the following are setup as secrets in your GitHub repo.
 
-* KEYSTORE={fileNameFromAbove}.keystore
-* KEY_ALIAS={alias-from-above}
-* STORE_PASSWORD={password-from-above}
-* KEY_PASSWORD={password-from-above}
+## Setup GitHub secrets
 
-Example:
-```yaml
- - name: Build APK
-   run: ./gradlew bundleRelease assembleRelease
-   env:
-     KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
-     STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
-     KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
-```
+In your app's GitHub repo, setup the following secrets:
 
-In the `build.gradle` file add a `release` config under signing config:
+* ANDROID_UPLOAD_KEYSTORE_BASE64={file-name-from-above-step}.keystore - encoded as base64
+* ANDROID_KEY_ALIAS={alias-from-above-step}
+* ANDROID_SIGNING_STORE_PASSWORD={password-from-above-step}
+* ANDROID_SIGNING_KEY_PASSWORD={password-from-above-step}
 
-```javascript
+Use the following command to encode the keystore file as base64:
+`base64 -i your-keystore-file.keystore | pbcopy`
+
+
+## Update Gradle Files 
+
+In the `android/app/build.gradle` file add a `release` config under `signingConfigs`. 
+
+```js
 signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -33,11 +36,12 @@ signingConfigs {
             keyPassword 'android'
         }
         release {
-            // We can leave these in environment variables
-            storeFile file("$System.env.KEYSTORE")
-            keyAlias "$System.env.KEY_ALIAS"
-            storePassword "$System.env.STORE_PASSWORD"
-            keyPassword "$System.env.KEY_PASSWORD"
+            // This will look for the release.keystore file in the android/app/ folder. The release.keystore file will be created in the GitHub Action
+            storeFile = file("release.keystore")
+            // The environment keys must match the secret keys setup in GitHub
+            keyAlias System.getenv("ANDROID_KEY_ALIAS")
+            storePassword System.getenv("ANDROID_SIGNING_STORE_PASSWORD")
+            keyPassword System.getenv("ANDROID_SIGNING_KEY_PASSWORD")
         }
     }
 ```
@@ -56,27 +60,88 @@ Additionally, we need to tell Gradle to use our new config for release builds:
     }    
 ```
 
+Optionally, set the versionCode automatically from GitHub Actions 
+```js
+defaultConfig {
+        ...
+        versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 1
+        versionName "1.1"
+        ...
+    }
+```
 
-Alternatively, you can [sign your release from Android Studio](https://developer.android.com/studio/publish/app-signing#sign_release).
+## GitHub Action
 
-## Build and Upload
+ See the [bc-mobile-wallet](https://github.com/bcgov/bc-wallet-mobile) project for a complete GitHub Action workflow. Below is a basic GitHub Action.
 
-Now that we got Gradle setup, we can run from the Android folder:
+```yaml
+name: Build
+on: 
+  push:
+    branches: [ "main" ]
 
-`./gradlew bundleRelease assembleRelease`
+jobs:
+  build:
+    name: Build and sign android bundle
+    runs-on: ubuntu-latest
 
-If everything goes well, you will see something like:
+    env:
+      # The file name name MUST match the storeFile in the build.gradle file
+      KEYSTORE_FILE: android/app/release.keystore
 
-![](https://github.com/bcgov/mobile-signing-service/blob/master/wiki-page-assets/react-native-4.1.png)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-You will then find a .aab build under app/build/outputs/bundle/release
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3 
+        with:
+            cache: 'yarn'
+            node-version: 19
 
-Navigate to the Google Play Console, and select the app for which you just build a release. Then select Internal Testing -> Edit Release -> Drag and drop the .aab bundle.
+      - name: Install node modules
+        run: |
+          yarn install --frozen-lockfile
 
-![](https://github.com/bcgov/mobile-signing-service/blob/master/wiki-page-assets/react-native-4.2.png)
+      - name: Setup Gradle 
+        uses: gradle/gradle-build-action@v2
 
-Google will then give you more info on your app and will present any warning or errors you need to address. Once all that is done, and you start internal testing you will be able to see them under Releases. 
+      # The keystore was base64 encoded. It must be decoded in order to use it
+      - name: Decode keystore file
+        env:
+          UPLOAD_KEYSTORE: ${{ secrets.ANDROID_UPLOAD_KEYSTORE_BASE64 }}
+        run: |
+          echo "${UPLOAD_KEYSTORE}" | base64 -d > ${KEYSTORE_FILE}
 
-![](https://github.com/bcgov/mobile-signing-service/blob/master/wiki-page-assets/react-native-4.3.png)
+      - name: Sign app 
+        env:
+          # These environment keys MUST match the keys in the build.gradle file
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_SIGNING_KEY_PASSWORD: ${{ secrets.ANDROID_SIGNING_KEY_PASSWORD }}
+          ANDROID_SIGNING_STORE_PASSWORD: ${{ secrets.ANDROID_SIGNING_STORE_PASSWORD }}
+          # Automatically update the VersionCode number in the build.gradle file. The number is not committed to git.
+          VERSION_CODE: ${{ github.run_number }}
+        run: |
+            npx react-native build-android --mode=release
+       
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: Signed App Bundle
+            # This is the default path where the bundle is created
+            path: android/app/build/outputs/bundle/release/app-release.aab
+            if-no-files-found: error
+            retention-days: 7    
+```
 
-For any future releases, you will just need to update the build number, rebuild using Gradle, and upload to Google.
+## Upload the build
+
+### GitHub Action Upload
+See the [Publish Your App](publish.md) page for information on how to upload from your CI/CD pipeline.
+
+### Manual Upload
+
+To upload the file:
+
+1. Download the `app-release.aab` file from the GitHub Action 
+1. Follow Google's [Prepare and roll out a release](https://support.google.com/googleplay/android-developer/answer/9859348?sjid=4924136940059865319-NA) documentation
