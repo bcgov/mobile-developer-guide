@@ -16,4 +16,4 @@ Please see Google's [Export compliance](https://support.google.com/googleplay/an
 Unlike Apple, Google does not ask for compliance documentation.  Your app is expected to follow U.S. regulations.
 
 # Your app's compliance
-It is important for you to determine your app's compliance. See the [Encryption and Export Administration Regulations (EAR)](https://www.bis.doc.gov/index.php/policy-guidance/encryption) website for more details.
+It is important for you to determine your app's compliance. If you distribute your app outside of Canada you will need to follow [U.S. encryption export regulations](https://www.bis.doc.gov/index.php/policy-guidance/encryption). If you need help determining your compliance level, contact [Legal Services Branch](https://dir.gov.bc.ca/gtds.cgi?show=Branch&organizationCode=AG&organizationalUnitCode=LEGAL).
