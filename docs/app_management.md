@@ -10,9 +10,11 @@ We'll use this information to setup your team members on the app stores.
 
 ## Managing user access to App Store Connect
 
-[App Store Connect](https://appstoreconnect.apple.com/login) is the platform that allows teams to manage their apps on the Apple App Store. By assigning roles to users, you control who has access to do certain functions. Roles available to app team members are: 
+[App Store Connect](https://appstoreconnect.apple.com/login) is the platform that allows teams to manage their apps on the Apple App Store. By assigning roles to users, you control who has access to do certain functions. 
 
+A person may have more than one role. For example, a user may have both the App Manager and Customer Support roles. Please consult Apple's [Program Roles](https://developer.apple.com/support/roles/) documentation for the functions available to each role. 
 
+Roles available to app team members are: 
 
 
 ### App Manager Role
@@ -35,7 +37,7 @@ Users in the Sales role can view app analytics, sales and trends reports. This r
 
 ### Apple ID
 Any email address may be used to create an account on App Store Connect. It does not need to be one associated with an Apple ID. But, the user will [need to create an Apple ID](https://developer.apple.com/help/app-store-connect/manage-your-team/add-and-edit-users) when activating the account.
-A person may have more than one role. For example, a user may have both the App Manager and Customer Support roles. Please consult Apple's [Program Roles](https://developer.apple.com/support/roles/) documentation for the functions available to each role. The following sections describe the purpose of each role.
+
 
 ## Managing user access to Google Play Console
 
