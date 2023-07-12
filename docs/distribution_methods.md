@@ -12,7 +12,7 @@ Please consult [Apple's app guidelines](https://developer.apple.com/app-store/re
 
 Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](https://citz.sp.gov.bc.ca/sites/ES/DS/MDAS/Docs/SitePages/Home.aspx). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). You'll be the first app and will need extra setup.
 
-Employee and contractor apps also need extra setup in Apple's App Store Connect. The Developer Experience Team will assist in this setup.
+Employee and contractor apps also need extra setup in Apple's App Store Connect. The [Developer Experience Team](contact.md) will assist in this setup.
 
 ## Beta testing distribution
 

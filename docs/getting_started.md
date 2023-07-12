@@ -1,4 +1,4 @@
-# Getting started
+# Project initiation
 
 You have an idea for an app. You have approval from your ministry and you're excited to start building. However, before getting started, book an onboarding meeting with the [Developer Experience Team](contact.md). This meeting will help us set up your project in the mobile developer accounts. To make the most of our time together, gather the information outlined below.
 
@@ -27,6 +27,6 @@ You have an idea for an app. You have approval from your ministry and you're exc
 1. Does the app's intellectual property belong to the ministry or the vendor? 
 1. If the ministry owns the app's intellectual property, will the code be in GitHub, BitBucket Server or elsewhere? Can the code be public? If the code will live on the [bcgov GitHub organization](https://github.com/bcgov), provide us with the developers' GitHub IDs so we can add them to the organization.
 1. Who should have access to manage the app on the app stores and what access level should they have? Refer to the [App Managment](app_management.md) section for more details.
-1. If yes, have you talked to the [Platform Service Team](https://cloud.gov.bc.ca)?
+1. If your app needs a new backend service then talk to the [Platform Service Team](https://cloud.gov.bc.ca) to get it setup on OpenShift.
 
 We look forward to meeting with you!

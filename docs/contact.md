@@ -2,8 +2,6 @@
 
 [Contact the Developer Experience Team](mailto:Developer.Experience@gov.bc.ca).
 
-* [Developer.Experience@gov.bc.ca](mailto:Developer.Experience@gov.bc.ca)
-
 
 Want to connect with other mobile developers? Join the community at:
 
