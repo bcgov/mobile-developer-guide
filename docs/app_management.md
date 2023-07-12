@@ -1,24 +1,18 @@
-# Managing Your App 
+# Managing your app 
 
-Please provide the Developer Experience Team with the names and email addresses of who will:
+Provide the Developer Experience Team with the names and email addresses of who will:
 
 * Administer the app
-* Developer the app
+* Develop the app
 * Respond to user reviews
 
-We will use this information to setup your team members on the app stores.  
+We'll use this information to setup your team members on the app stores.  
 
-## Managing User Access To App Store Connect
+## Managing user access to App Store Connect
 
 [App Store Connect](https://appstoreconnect.apple.com/login) is the platform that allows teams to manage their apps on the Apple App Store. By assigning roles to users, you control who has access to do certain functions. Roles available to app team members are: 
 
-* App Manager
-* Customer Support
-* Developer
-* Marketing
-* Sales 
 
-A person may have more than one role. For example, a user may have both the App Manager and Customer Support roles. Please consult Apple's [Program Roles](https://developer.apple.com/support/roles/) documentation for the functions available to each role. The following sections describe the purpose of each role.
 
 
 ### App Manager Role
@@ -41,38 +35,38 @@ Users in the Sales role can view app analytics, sales and trends reports. This r
 
 ### Apple ID
 Any email address may be used to create an account on App Store Connect. It does not need to be one associated with an Apple ID. But, the user will [need to create an Apple ID](https://developer.apple.com/help/app-store-connect/manage-your-team/add-and-edit-users) when activating the account.
+A person may have more than one role. For example, a user may have both the App Manager and Customer Support roles. Please consult Apple's [Program Roles](https://developer.apple.com/support/roles/) documentation for the functions available to each role. The following sections describe the purpose of each role.
 
+## Managing user access to Google Play Console
 
-## Managing User Access To Google Play Console
-
-[Play Console](https://accounts.google.com/ServiceLogin?service=androiddeveloper&passive=true&continue=https%3A%2F%2Fplay.google.com%2Fconsole%2Fdeveloper%2F&_ga=2.124271306.1978797360.1688067469-933612381.1687381212) is the platform that allows teams to manage their apps on the Google Play Store. It uses permission settings to control who has access to do certain functions. The developer experience team will create three permission groups for your app:
+[Play Console](https://accounts.google.com/ServiceLogin?service=androiddeveloper&passive=true&continue=https%3A%2F%2Fplay.google.com%2Fconsole%2Fdeveloper%2F&_ga=2.124271306.1978797360.1688067469-933612381.1687381212) is the platform that allows teams to manage their apps on the Google Play Store. It uses permission settings to control who has access to do certain functions. The Developer Experience Team will create 3 permission groups for your app:
 
 * Admin
 * Release
 * Report
 
-Users will then be assigned into one, or more, or these permission groups. 
+Users will then be assigned into one, or more, of these permission groups. 
 
-Please see the "Permission definitions and uses" section in Google's [Add developer account users and manage permissions]( https://support.google.com/googleplay/android-developer/answer/9844686) documentation. It provides a complete list of the permissions available.
+See the "Permission definitions and uses" section in Google's [Add developer account users and manage permissions]( https://support.google.com/googleplay/android-developer/answer/9844686) documentation. It provides a complete list of the permissions available.
 
 
-### Admin Permission Group
+### Admin permission group
 Users in this group have full access to the app. Their permissions also include inviting new users to the developer account. They can also add and remove permissions for other users who have access to the same apps. The Product and Technical Owners are members of this group.
 
-### Release Permission Group
+### Release permission group
 The permissions available to this group include the following:
 * Release to production, exclude devices and use Play app signing
 * Release apps to testing tracks
 * Manage testing tracks and edit tester lists
 
-The developer experience team will work you to decide which options you would like to enable. 
+The Developer Experience Team will work with you to decide which options you'd like to enable. 
 
-Users in the [Admin Permission Group](#admin-permission-group) can administer this group. This allows them to add or remove users from the group. The Admin Group can also enable or disable the permission options listed above.
-
-
-### Report Permission Group
-This permission group lets a user view all information for this app, but not financial data. The permission to view Financial Data can be enabled at the discretion of the Product Owner. Users in the [Admin Permission Group](#admin-permission-group) for the app can administer this group.
+Users in the [admin permission group](#admin-permission-group) can administer this group. This allows them to add or remove users from the group and enable or disable permission options.
 
 
-### Google Account
-A user does not need a Gmail account in order to make a Google account. Please refer to the "Use an existing email address" section in Google's [Create a Google Account](https://support.google.com/accounts/answer/27441?hl=en) documentation.
+### Report permission group
+This permission group lets a user view all information for this app, but not financial data. The permission to view financial data can be enabled at the discretion of the Product Owner. Users in the [admin permission group](#admin-permission-group) for the app can administer this group.
+
+
+### Google account
+A user doesn't need a Gmail account in order to make a Google account. Refer to the "Use an existing email address" section in Google's [Create a Google Account](https://support.google.com/accounts/answer/27441?hl=en) documentation.
