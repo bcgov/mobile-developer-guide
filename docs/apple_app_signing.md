@@ -25,18 +25,25 @@ Developers may install the app on their own device. This can be [setup through X
 
 You must use the Province of BC's signing certificate to distribute the app. This certificate is used when exporting the app to the AppStore and TestFlight. It also allows the app to use the [AdHoc distribution method](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices). 
 
-
+#### CI/CD build
 If your app's code is in the [bcgov GitHub organization](https://github.com/bcgov), then use a [GitHub Action](https://docs.github.com/en/actions) to build and sign your app. Refer to GitHub's [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) documentation for details. 
 
-Send your GitHub repo's name to the [Developer Experience Team](contact.md). We will give it access to the certificate and password secrets. Your repo will contain the provisioning profile secret. Turn off "automatically manage signing" in the Signing & Capabilities -> Release tab in Xcode.
+Send your GitHub repo's name to the [Developer Experience Team](contact.md). We will give it access to the certificate and password secrets. Your repo will contain the provisioning profile secret. 
 
 
 ![Diagram showing where secrets are stored. The signing certificate and its password are in the bcgov GitHub organization's secrets. The provisioning profile and keychain password are in the repo's secrets. The GitHub Action uses the secrets from both locations to sign the app.](assets/apple_signing.drawio.svg)
 
+Setup the project to work with manual certificates. In the Signing & Capabilities -> Release tab in Xcode:
+
+* Turn off "automatically manage signing" 
+* Download/Import the provisioning profile for your app
+
 Contact the [Developer Experience Team](contact.md) if you are not using GitHub. We will discuss other options for using the distribution certificate.
 
-Are you releasing your app from a developer's laptop? Then turn on "automatically manage signing" in the Signing & Capabilities -> Release tab in Xcode.  However, we encourage you to use a CI/CD pipeline to build and release your app. It allows for repeatable builds and removes reliance on a developer's computer.
+#### Laptop build
+Are you releasing your app from a developer's laptop? Let the [Developer Experience Team](contact.md) know so we can give you access to the distribution certificate. Then turn on "automatically manage signing" in the Signing & Capabilities -> Release tab in Xcode. 
 
+However, we encourage you to use a CI/CD pipeline to build and release your app. It allows for repeatable builds and removes reliance on a developer's computer.
 
 
 ## Provisioning Profiles
