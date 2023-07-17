@@ -1,29 +1,37 @@
 # Google signing for React Native apps
 
+Learn how to setup Google signing in a CI/CD pipeline using GitHub Actions.
 
-Refer to React Native's [Publishing to Google Play Store](https://reactnative.dev/docs/signed-apk-android) guide for an overview of app signing. That guide describes how to sign an app from a developer's computer. This page describes how to setup those steps in a CI/CD pipeline using GitHub Actions.
+Need a general overview of what app signing is? Review React Native's [Publishing to Google Play Store](https://reactnative.dev/docs/signed-apk-android) guide which describes how to sign an app from a developer's computer. 
 
-## Prerequisite
+Follow these steps to sign your React Native app:
+
+1. [Setup Google Play App Signing](google_react_native_signing.md#setup-google-play-app-signing)
+1. [Create the upload key](google_react_native_signing.md#create-the-upload-key)
+1. [Update Gradle files ](google_react_native_signing.md#update-gradle-files)
+1. [Setup GitHub Action](google_react_native_signing.md#github-action)
+1. [Upload the build](google_react_native_signing.md#upload-the-build)
+
+## Setup Google Play App Signing
 Your app must be setup to use [Google Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play).
 
 ## Create the upload key
 Follow React Native's [instructions to generate an upload key](https://reactnative.dev/docs/signed-apk-android#generating-an-upload-key).
 
 
-## Setup GitHub secrets
+In your app's GitHub repo, setup 4 secrets:
 
-In your app's GitHub repo, setup the following secrets:
+* ANDROID_UPLOAD_KEYSTORE_BASE64={file-name-from-above}.keystore - encoded as base64
+* ANDROID_KEY_ALIAS={alias-from-above}
+* ANDROID_SIGNING_STORE_PASSWORD={password-from-above}
+* ANDROID_SIGNING_KEY_PASSWORD={password-from-above}
 
-* ANDROID_UPLOAD_KEYSTORE_BASE64={file-name-from-above-step}.keystore - encoded as base64
-* ANDROID_KEY_ALIAS={alias-from-above-step}
-* ANDROID_SIGNING_STORE_PASSWORD={password-from-above-step}
-* ANDROID_SIGNING_KEY_PASSWORD={password-from-above-step}
+To encode the keystore file as base64, use this command:
 
-Use the following command to encode the keystore file as base64:
 `base64 -i your-keystore-file.keystore | pbcopy`
 
 
-## Update Gradle Files 
+## Update Gradle files 
 
 In the `android/app/build.gradle` file add a `release` config under `signingConfigs`. 
 
@@ -46,7 +54,7 @@ signingConfigs {
     }
 ```
 
-Additionally, we need to tell Gradle to use our new config for release builds:
+You also need to tell Gradle to use the new config for release builds:
 
 ```js
     buildTypes {
@@ -72,7 +80,9 @@ defaultConfig {
 
 ## GitHub Action
 
- See the [bc-mobile-wallet](https://github.com/bcgov/bc-wallet-mobile) project for a complete GitHub Action workflow. Below is a basic GitHub Action.
+Review the [bc-mobile-wallet](https://github.com/bcgov/bc-wallet-mobile) project for a complete GitHub Action workflow. 
+
+Example of a basic GitHub Action:
 
 ```yaml
 name: Build
@@ -136,10 +146,10 @@ jobs:
 
 ## Upload the build
 
-### GitHub Action Upload
-See the [Publish Your App](publish.md) page for information on how to upload from your CI/CD pipeline.
+### GitHub Action upload
+Review the [Publish Your App](publish.md) page for information on how to upload from your CI/CD pipeline.
 
-### Manual Upload
+### Manual upload
 
 To upload the file:
 
