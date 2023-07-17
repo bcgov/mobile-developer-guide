@@ -9,8 +9,8 @@ nav:
   - Distribution Methods: distribution_methods.md
   - App Management: app_management.md
   - Apple App Signing: apple_app_signing.md
-  - App Store Connect API Key: app_store_connect_api_key.md
   - Google App Signing: google_app_signing.md
   - Google Signing For React Native Apps: google_react_native_signing.md
+  - Publish your app: publish.md
 plugins:
   - techdocs-core
