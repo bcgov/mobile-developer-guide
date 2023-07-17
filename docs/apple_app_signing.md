@@ -1,8 +1,9 @@
 # Apple signing
 
+This guide details how to work with signing certificates.
+
 To learn about code signing, review Apple's [code signing](https://help.apple.com/xcode/mac/current/#/devfbe995ebf) documentation. 
 
-This guide details how to work with signing certificates.
 
 ## Certificates
 Apple provides two types of certificates:
