@@ -1,6 +1,6 @@
-# Apple Signing
+# Apple signing
 
-To learn about code signing, please review Apple's [code signing](https://help.apple.com/xcode/mac/current/#/devfbe995ebf) documentation. 
+To learn about code signing, review Apple's [code signing](https://help.apple.com/xcode/mac/current/#/devfbe995ebf) documentation. 
 
 This guide details how to work with signing certificates.
 
@@ -11,14 +11,16 @@ Apple provides two types of certificates:
 * Distribution
 
 
-Both certificate types need the app's [bundle id](https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids). It was created during the project's onboarding phase. Please see your Product or Technical Owner if you do not have the bundle id. 
+Both certificate types need the app's [bundle id](https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids). Remember, this was created during the project's onboarding phase. Talk to your Product or Technical Owner if you don't have the bundle id. 
 
  
 ### Development
 
-Developer accounts are set to have access to development certificates, identifiers & profiles.  You can access them within Xcode by setting the team to the Province of BC. Please review Apple's [Assign a project to a team](https://help.apple.com/xcode/mac/current/#/dev23aab79b4) documentation for details on how to do this. Turn on the "automatically manage signing" in the Signing & Capabilities -> Debug tab.
+Developer accounts are set up to have access to development certificates, identifiers and profiles. You can access them within Xcode by setting the team to the Province of BC. 
 
-Developers may install the app on their own device. This can be [setup through Xcode](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices#Register-devices-automatically-in-Xcode). Please use [TestFlight](https://testflight.apple.com) if you need to test on many devices.
+Review Apple's [Assign a project to a team](https://help.apple.com/xcode/mac/current/#/dev23aab79b4) documentation for details on how to do this. Turn on the "automatically manage signing" in the Signing and Capabilities -> Debug tab.
+
+Developers may install the app on their own device. This can be [setup through Xcode](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices#Register-devices-automatically-in-Xcode). Use [TestFlight](https://testflight.apple.com) if you need to test on many devices.
 
 
 ### Distribution
@@ -38,15 +40,15 @@ Setup the project to work with manual certificates. In the Signing & Capabilitie
 * Turn off "automatically manage signing" 
 * Download/Import the provisioning profile for your app
 
-Contact the [Developer Experience Team](contact.md) if you are not using GitHub. We will discuss other options for using the distribution certificate.
+Contact the [Developer Experience team](contact.md) if you are not using GitHub. We'll discuss other options for using the distribution certificate.
 
 #### Laptop build
-Are you releasing your app from a developer's laptop? Let the [Developer Experience Team](contact.md) know so we can give you access to the distribution certificate. Then turn on "automatically manage signing" in the Signing & Capabilities -> Release tab in Xcode. 
+Are you releasing your app from a developer's laptop? Let the [Developer Experience team](contact.md) know so we can give you access to the distribution certificate. Then turn on "automatically manage signing" in the Signing & Capabilities -> Release tab in Xcode. 
 
-However, we encourage you to use a CI/CD pipeline to build and release your app. It allows for repeatable builds and removes reliance on a developer's computer.
+We encourage you to use a CI/CD pipeline to build and release your app. It allows for repeatable builds and removes reliance on a developer's computer.
 
 
-## Provisioning Profiles
+## Provisioning profiles
 
 Provisioning profiles links the bundle id with a certificate and optional associated devices. As with certificates, there are also development and distribution provisioning profiles.
 
@@ -98,7 +100,7 @@ Look for the `UUID` key in the output. Its value is the provisioning profile's U
 
 The [bc-wallet-mobile](https://github.com/bcgov/bc-wallet-mobile/blob/main/.github/workflows/main.yaml) project has a complete GitHub Action that builds an iOS app. Use it as a reference for your project.
 
-Below is a basic GitHub Action that builds and signs an app.
+This is a basic GitHub Action that builds and signs an app.
 
 ```yaml
 name: Build
