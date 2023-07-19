@@ -1,8 +1,8 @@
 # Mobile app development
 
-The Province of B.C. provides many types of mobile apps to the public. From wildlife tracking, to digital ID, to employment services and more. These apps are available for download on [Apple's App Store](https://apps.apple.com/us/developer/his-majesty-the-king-in-right-of-the/id487323275) and [Google's Play Store](https://play.google.com/store/apps/developer?id=Province+of+British+Columbia,+Canada&hl=en_CA&gl=US). The Province also creates private apps used by its employees for their job functions.
+The B.C. government provides many types of mobile apps to the public, like wildlife tracking and employment services. These apps are available for download on [Apple's App Store](https://apps.apple.com/us/developer/his-majesty-the-king-in-right-of-the/id487323275) and [Google's Play Store](https://play.google.com/store/apps/developer?id=Province+of+British+Columbia,+Canada&hl=en_CA&gl=US). We also create private apps used by employees for their job functions.
 
-The Developer Experience Team will assist you in your mobile app development journey. While we won't code, design or review your app, we'll help you:
+The Developer Experience team will assist you in your mobile app development journey. While we won't code, design or review your app, we'll help you:
 
 * Onboard to the app stores
 * Connect with other mobile dev teams

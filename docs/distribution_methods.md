@@ -4,13 +4,24 @@ Mobile apps are distributed either through the public app stores or MDM InTune. 
 
 ![Diagram of the various distribution methods. If the app is for the general public, it's distributed via the Apple App Store and Google Play Stores. If it's an app for Government employees, it's distributed via MDM inTunes. If it's an app for Employees and Contractors it is distributed as an unlisted app via the Apple App Store.](assets/distribution.drawio.svg)
 
-Public apps are released through the Province's accounts on Apple's App Store and Google's Play Store. You must list your app through the Province's accounts. The [developer experience team](contact.md) will assist you in setting up your app on these accounts. Refer to the [project initiation](getting_started.md) page for the information needed to setup an app. Once setup is complete, you'll have access to [App Store Connect](https://appstoreconnect.apple.com) and [Google Play Console](https://play.google.com/console/about/) to manage your app.
+Public apps are released through the Province's accounts on the Apple App Store and Google Play Store. 
 
-Both the Apple App Store and Google Play Store have an app review process. When creating your app, it's important to consider how the app reviewer will interact with your app. For instance, if your app requires a login, the app reviewer will need either an account or access to a demo account. If your internal app can't go through the app review process, inform the [developer experience team](contact.md).
+You must list your app through the Province's accounts. The [Developer Experience team](contact.md) helps you get your app on these accounts.
 
-Please consult [Apple's app guidelines](https://developer.apple.com/app-store/review/) and [Google's app guidelines](https://support.google.com/googleplay/android-developer/answer/9859455?hl=en&ref_topic=7072031&sjid=10634496881788336983-NA) when preparing your app's release. It's important to follow their guidelines to ensure a smooth app review process.
+Before contacting the Developer Experience team, we recommend reviewing the [project initiation information](getting_started.md).
 
-Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](https://citz.sp.gov.bc.ca/sites/ES/DS/MDAS/Docs/SitePages/Home.aspx). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). You'll be the first app and will need extra setup.
+Once setup is complete, you'll have access to [App Store Connect](https://appstoreconnect.apple.com) and [Google Play Console](https://play.google.com/console/about/) to manage your app.
+
+## App review process
+Both the Apple App Store and Google Play Store have an app review process. 
+
+When creating your app, it's important to consider how the app reviewer will interact with your app. For example, if your app requires a user to login, the app reviewer will need either an account or access to a demo account. 
+
+If you believe your internal app can't go through the app review process, contact the [Developer Experience team](contact.md) for guidance.
+
+Consult the [Apple app guidelines](https://developer.apple.com/app-store/review/) and [Google app guidelines](https://support.google.com/googleplay/android-developer/answer/9859455?hl=en&ref_topic=7072031&sjid=10634496881788336983-NA) when preparing your app's release. It's important to follow their guidelines to ensure a smooth review process.
+
+Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](https://citz.sp.gov.bc.ca/sites/ES/DS/MDAS/Docs/SitePages/Home.aspx). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). 
 
 Employee and contractor apps also need extra setup in Apple's App Store Connect. The [Developer Experience Team](contact.md) will assist in this setup.
 

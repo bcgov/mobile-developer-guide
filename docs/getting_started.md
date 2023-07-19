@@ -1,6 +1,8 @@
 # Project initiation
 
-You have an idea for an app. You have approval from your ministry and you're excited to start building. However, before getting started, book an onboarding meeting with the [Developer Experience Team](contact.md). This meeting will help us set up your project in the mobile developer accounts. To make the most of our time together, gather the information outlined below.
+You have an idea for an app and you have approval from your ministry. You're excited to start building. 
+
+Before getting started, book an onboarding meeting with the [Developer Experience team](contact.md). This meeting helps us set up your project in the mobile developer accounts. To make the most of our time together, prepare for the meeting and gather the required information.
 
 ## Information to prepare for your onboard meeting
 
