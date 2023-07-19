@@ -1,6 +1,6 @@
 # Mobile app distribution methods
 
-Mobile apps are distributed either through the public app stores or MDM InTune. Review the diagram below to determine the distribution method for your app.
+Mobile apps are distributed through the public app stores or MDM InTune. Your distribution method is determined by who will use your app.
 
 ![Diagram of the various distribution methods. If the app is for the general public, it's distributed via the Apple App Store and Google Play Stores. If it's an app for Government employees, it's distributed via MDM inTunes. If it's an app for Employees and Contractors it is distributed as an unlisted app via the Apple App Store.](assets/distribution.drawio.svg)
 
