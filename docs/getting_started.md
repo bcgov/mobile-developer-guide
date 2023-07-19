@@ -34,6 +34,7 @@ The name of your mobile app.
 #### Platform
 
 Is the app for: 
+
 * Android devices
 * iOS devices 
 * Android and iOS devices
