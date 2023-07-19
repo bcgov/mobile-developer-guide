@@ -27,18 +27,18 @@ Who will use this app? Will it be:
 
 ### App details
  
-#### App name
+#### Name
 
 The name of your mobile app.
 
-#### App platform
+#### Platform
 
 Is the app for: 
 * Android devices
 * iOS devices 
 * Android and iOS devices
 
-#### App application/bundle ID 
+#### Application/bundle ID 
 
 The Google application ID and Apple bundle ID should be in the form `gov.bc.ca.appname`. 
 
@@ -54,7 +54,7 @@ Refer to Google's [application ID](https://developer.android.com/build/configure
 
 Provide any capabilities the Apple app will require, such as push notifications and maps. Refer to [Apple's capabilities documentation](https://developer.apple.com/help/account/reference/supported-capabilities-ios/) for the complete list.
 
-#### App management access
+#### Management permissions
 
 Who should have access to manage the app on the app stores and what access level should they have? Refer to the [App Managment](app_management.md) section for more details.
 
