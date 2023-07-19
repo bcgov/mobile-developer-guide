@@ -1,6 +1,6 @@
 # Publish your app
 
-This page describes how to setup your CI/CD pipeline to upload your app to App Store Connect and Play Console.
+Learn how to setup your CI/CD pipeline to upload your app to App Store Connect and Play Console.
 
 ## Distribution methods
 
