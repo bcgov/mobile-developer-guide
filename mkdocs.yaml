@@ -5,7 +5,7 @@ edit_uri: edit/main/docs/
 
 nav:
   - Introduction: index.md
-  - Getting Started: getting_started.md
+  - Project initiation: getting_started.md
   - Distribution Methods: distribution_methods.md
   - App Management: app_management.md
   - Apple App Signing: apple_app_signing.md
