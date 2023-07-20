@@ -12,6 +12,7 @@ nav:
   - App Store Connect API Key: app_store_connect_api_key.md
   - Google App Signing: google_app_signing.md
   - Google Signing For React Native Apps: google_react_native_signing.md
+  - Encryption Export Regulations: encryption.md
   - Contact Us: contact.md
 plugins:
   - techdocs-core
