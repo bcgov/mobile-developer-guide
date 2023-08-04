@@ -55,6 +55,7 @@ Users in this group have full access to the app. Their permissions also include 
 
 ### Release permission group
 The permissions available to this group include:
+
 * Release to production, exclude devices and use Play app signing
 * Release apps to testing tracks
 * Manage testing tracks and edit tester lists
