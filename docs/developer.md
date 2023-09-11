@@ -23,14 +23,14 @@ Still not sure what option is best for your project? [Contact the Developer Expe
 
 
 #### Mobile app frameworks
-Choose a hybrid framework over building a native app. Hybrid frameworks enable code reuse across platforms, saving time and effort. Using a single codebase that deploys to both iOS and Android eliminates the need to build separate apps. This reduces development time and accelerates time-to-market. You are free to choose the framework that is best suited to your project.
+Choose a hybrid framework over building a native app. Hybrid frameworks enable code reuse across platforms, saving time and effort. Using a single codebase that deploys to both iOS and Android eliminates the need to build separate apps. This reduces development time and accelerates time-to-market. You're free to choose the framework that is best suited to your project.
 
-If you must use native code, then we recommend Swift for iOS and Kotlin for Android. Are you supporting a legacy application that uses an older language (e.g., Objective-C)? If so, you may be able to write new features in a more modern language.
+If you must use native code, then we recommend Swift for iOS and Kotlin for Android. Are you supporting a legacy application that uses an older language (such as Objective-C)? If so, you may be able to write new features in a more modern language.
 
 ### Design with people and embed inclusion
  The [design with people and embed inclusion](https://digital.gov.bc.ca/policies-standards/dcop/design/) practice describes the techniques you can use so your mobile app meets the needs of the people who use it.
 
-When possible, you should use the [Design System](https://developer.gov.bc.ca/Design-System/About-the-Design-System). The Design System guidance on colour pallets and fonts is applicable to mobile apps.
+When possible, you should use the [Design System](https://developer.gov.bc.ca/Design-System/About-the-Design-System). The Design System guidance on colour palettes and fonts is applicable to mobile apps.
 
 Note: The Province of B.C. uses the [BC Sans](https://www2.gov.bc.ca/gov/content/governments/services-for-government/policies-procedures/bc-visual-identity/bc-sans) font for digital service delivery. Don't use fonts that need a license like Myriad Pro. 
 
@@ -55,7 +55,7 @@ When possible, have another developer on your team review your code.
 Are you the only developer on your team? Ask in the [#devops-mobile-development](https://chat.developer.gov.bc.ca/channel/devops-mobile-development) RocketChat channel for another developer to review your code.
 
 #### Linters
-We recommend you use a linter in your project. A linter analyzes source code and identify potential issues, errors, or violations of coding standards. If you do not have a linter, ask in the [#devops-mobile-development](https://chat.developer.gov.bc.ca/channel/devops-mobile-development). GitHub also maintains a [collection of linters](https://github.com/collections/clean-code-linters) for you to explore.
+We recommend you use a linter in your project. A linter analyzes source code and identify potential issues, errors or violations of coding standards. If you don't have a linter, ask in the [#devops-mobile-development](https://chat.developer.gov.bc.ca/channel/devops-mobile-development). GitHub also maintains a [collection of linters](https://github.com/collections/clean-code-linters) for you to explore.
 
 
 #### Testing your mobile application 
@@ -73,7 +73,7 @@ Developers should write automated unit tests for their code. There are many bene
 ##### Beta testing
 Beta testing is when a pre-release version of the mobile app is made available to a limited group of users. The purpose is to gather feedback and make improvements before releasing it to the public.
 
-Both Apple and Google provide beta testing mechanisms. Use their documentation for guidance on how to setup a beta test. 
+Both Apple and Google provide beta testing mechanisms. Use their documentation for guidance on how to set up a beta test. 
 
 * [Apple Test Flight documentation ](https://testflight.apple.com)
 * [Google open, closed, or internal test documentation](https://support.google.com/googleplay/android-developer/answer/9845334?_ga=2.169255906.2142663607.1689618205-739144597.1687798630&_gac=1.113072630.1689622677.Cj0KCQjwzdOlBhCNARIsAPMwjbyTBfVF_kq-S5EIOdSu5Nk7skdlUlcE1ZScROR1wINBW54EBuk1k5AaAsxzEALw_wcB)
@@ -88,7 +88,7 @@ Be familiar with Android and iOS security practices to [take care of information
 
 
 ## Accessing the developer accounts
-Your Product Owner will invite you to the Apple and Google developer programs. You'll have access to the apps you are developing in both App Store Connect and Play Console.
+Your Product Owner will invite you to the Apple and Google developer programs. You'll have access to the apps you're developing in both App Store Connect and Play Console.
 
 ### Apple Developer Program
 
