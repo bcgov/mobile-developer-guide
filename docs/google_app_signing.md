@@ -9,12 +9,12 @@ To learn about code signing, review Google's [Sign your app](https://developer.a
 React Native apps need extra setup to use the keys. Review the [React Native Signing Guide](google_react_native_signing.md) for more details.
 
 ## Keys
-Google Play uses two keys:
+Google Play uses 2 keys:
 
 - Upload key
 - App signing key 
 
-Use Google's [Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) documentation for an in-depth review of the two keys.
+Use Google's [Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) documentation for an in-depth review of the 2 keys.
 
 ### Upload Key
 
@@ -34,5 +34,5 @@ We encourage teams to use a CI/CD pipeline. It provides repeatable builds and sa
 
 ### App Signing Key
 
-Use the [Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) service to sign your app. If you don't use this service and you lose your app’s signing key, you lose the ability to update your app. Google's [Using Play App Signing](https://developer.android.com/studio/publish/app-signing#enroll) documentation describes how to setup it up for your app.
+Use the [Play App Signing](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) service to sign your app. If you don't use this service and you lose your app’s signing key, you lose the ability to update your app. Google's [Using Play App Signing](https://developer.android.com/studio/publish/app-signing#enroll) documentation describes how to set it up for your app.
 
