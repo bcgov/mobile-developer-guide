@@ -24,7 +24,7 @@ The primary purpose of an App Manager is overseeing the management of an app on 
 The Customer Service role responds to customer reviews. This role is usually assigned to the Product Owner. Some teams have dedicated team members in this role.
 
 ### Developer role
-The Developer role focuses on the technical aspects of app management. Developers can upload the app's build file, access TestFlight, and manage internal testers.
+The Developer role focuses on the technical aspects of app management. Developers can upload the app's build file, access TestFlight and manage internal testers.
 
 ### Marketing role
 The Marketing role focuses on promoting and enhancing the visibility of apps. This role uses a subset of the functions available to the App Manager role. These include modifying an app's details, viewing its rating and creating new versions.
