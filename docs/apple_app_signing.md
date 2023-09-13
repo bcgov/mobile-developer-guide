@@ -6,7 +6,7 @@ To learn about code signing, review Apple's [code signing](https://help.apple.co
 
 
 ## Certificates
-Apple provides two types of certificates:
+Apple provides 2 types of certificates:
 
 * Development
 * Distribution
@@ -19,45 +19,38 @@ Both certificate types need the app's [bundle id](https://developer.apple.com/do
 
 Developer accounts are set up to have access to development certificates, identifiers and profiles. You can access them within Xcode by setting the team to the Province of BC. 
 
-Review Apple's [Assign a project to a team](https://help.apple.com/xcode/mac/current/#/dev23aab79b4) documentation for details on how to do this. Turn on the "automatically manage signing" in the Signing and Capabilities -> Debug tab.
+Review Apple's [Assign a project to a team](https://help.apple.com/xcode/mac/current/#/dev23aab79b4) documentation for details on how to do this. Turn on the "automatically manage signing" in the Signing and Capabilities -> Debug tab in XCode.
 
 Developers may install the app on their own device. This can be [setup through Xcode](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices#Register-devices-automatically-in-Xcode). Use [TestFlight](https://testflight.apple.com) if you need to test on many devices.
+
+[Contact the Developer Experience](contact.md) team if you experience issues with the development certificate process.
 
 
 ### Distribution
 
 You must use the Province of BC's signing certificate to distribute the app. This certificate is used when exporting the app to the AppStore and TestFlight. It also allows the app to use the [AdHoc distribution method](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices). 
 
-#### CI/CD build
-If your app's code is in the [bcgov GitHub organization](https://github.com/bcgov), then use a [GitHub Action](https://docs.github.com/en/actions) to build and sign your app. Refer to GitHub's [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) documentation for details. 
+## CI/CD build
+If your app's code is in the [bcgov GitHub organization](https://github.com/bcgov), then use a [GitHub Action](https://docs.github.com/en/actions) to build and sign your app. 
 
-Send your GitHub repo's name to the [Developer Experience Team](contact.md). We will give it access to the certificate and password secrets. Your repo will contain the provisioning profile secret. 
+Contact the [Developer Experience team](contact.md) if you're using a different CI/CD pipeline. 
+
+To use a GitHub Actions to build and sign your app:
+
+1. Send your GitHub repo's name to the [Developer Experience team](contact.md). 
+1. We will give it access to the following secrets:
+  1. `BUILD_CERTIFICATE_BASE64`
+  1. `IOS_BUILD_CERTIFICATE_PASSWD`
+1. Create and download the provisioning profile for your app
+1. Install the provisioning profile as a secret in your repo
+  1. Refer to GitHub's [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) documentation for details
+1. In the Signing & Capabilities -> Release tab in Xcode turn off "automatically manage signing" 
+1. Setup [export options](#exportoptionsplist)
+1. Create [the GitHub Action](#example)
 
 
 ![Diagram showing where secrets are stored. The signing certificate and its password are in the bcgov GitHub organization's secrets. The provisioning profile and keychain password are in the repo's secrets. The GitHub Action uses the secrets from both locations to sign the app.](assets/apple_signing.drawio.svg)
 
-Setup the project to work with manual certificates. In the Signing & Capabilities -> Release tab in Xcode:
-
-* Turn off "automatically manage signing" 
-* Download/Import the provisioning profile for your app
-
-Contact the [Developer Experience team](contact.md) if you are not using GitHub. We'll discuss other options for using the distribution certificate.
-
-#### Laptop build
-Are you releasing your app from a developer's laptop? Let the [Developer Experience team](contact.md) know so we can give you access to the distribution certificate. Then turn on "automatically manage signing" in the Signing & Capabilities -> Release tab in Xcode. 
-
-We encourage you to use a CI/CD pipeline to build and release your app. It allows for repeatable builds and removes reliance on a developer's computer.
-
-
-## Provisioning profiles
-
-Provisioning profiles links the bundle id with a certificate and optional associated devices. As with certificates, there are also development and distribution provisioning profiles.
-
-
-![Diagram of development and distribution provisioning profiles. The development provisioning profile uses the bundle id, development certificate and developer device(s). The distribution provisiong profile uses the bundle id and distribution certificate.](assets/apple_provisioning.drawio.svg)
-
-
-## CI/CD
 
 ### exportOptions.plist
 
@@ -209,3 +202,40 @@ jobs:
           if-no-files-found: error
           retention-days: 5
 ```
+
+## Laptop build
+Are you releasing your app from a developer's laptop? Use XCode's "automatically manage signing" feature to sign your app. 
+
+There are 2 steps to enable this feature:
+
+### 1. App Manager steps
+
+1. Sign into [App Store Connect](https://appstoreconnect.apple.com/login)
+1. Go to the [Users and Access](https://appstoreconnect.apple.com/access/users) tab
+1. Click on the developer who will sign the build
+1. Check the "Access to Cloud Managed Distribution Certificate" option under the "Additional Resources" section
+1. Repeat steps 3 - 4 for other developers who can sign the build
+1. [Contact the Developer Experience team](contact.md) if there are issues assigning access to the developer
+
+![Screenshot of the permission screen in App Store Connect. It shows the Access to Cloud Managed Distribution Certificate checkbox has been checked.](assets/developer_xcode_signing_permissions.png)
+
+### 2. Developer steps
+
+After the App Manager has given you the permissions in the above step, go into XCode:
+
+1. Navigate to the "Signing & Capabilities" screen
+1. Select "Automatically manage signing"
+1. Select "Government of British Columbia" as the team
+
+
+![Screenshot of XCode's Signing & Capabilities screen with th Automatically manage signing option selected](assets/developer_xcode_signing_auto.png)
+
+We encourage you to use a CI/CD pipeline to build and release your app. It allows for repeatable builds and removes reliance on a developer's computer.
+
+
+## Provisioning profiles
+
+Provisioning profiles links the bundle id with a certificate and optional associated devices. As with certificates, there are also development and distribution provisioning profiles.
+
+
+![Diagram of development and distribution provisioning profiles. The development provisioning profile uses the bundle id, development certificate and developer device(s). The distribution provisiong profile uses the bundle id and distribution certificate.](assets/apple_provisioning.drawio.svg)
