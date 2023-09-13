@@ -6,7 +6,7 @@ To learn about code signing, review Apple's [code signing](https://help.apple.co
 
 
 ## Certificates
-Apple provides two types of certificates:
+Apple provides 2 types of certificates:
 
 * Development
 * Distribution
@@ -41,7 +41,7 @@ Setup the project to work with manual certificates. In the Signing & Capabilitie
 * Turn off "automatically manage signing" 
 * Download/Import the provisioning profile for your app
 
-Contact the [Developer Experience team](contact.md) if you are not using GitHub. We'll discuss other options for using the distribution certificate.
+Contact the [Developer Experience team](contact.md) if you're not using GitHub. We'll discuss other options for using the distribution certificate.
 
 #### Laptop build
 Are you releasing your app from a developer's laptop? Let the [Developer Experience team](contact.md) know so we can give you access to the distribution certificate. Then turn on "automatically manage signing" in the Signing & Capabilities -> Release tab in Xcode. 
