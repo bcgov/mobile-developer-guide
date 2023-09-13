@@ -19,9 +19,9 @@ Ideally, both positions should be government employees.
 
 Who will use this app? Will it be:
 
-* the general public
-* internal government employees 
-* internal government employees and contractors
+* The general public
+* Internal government employees 
+* Internal government employees and contractors
 
  The app's [distribution method](distribution_methods.md) is dependent on this answer. 
 
