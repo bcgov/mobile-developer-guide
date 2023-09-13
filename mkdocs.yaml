@@ -6,14 +6,15 @@ edit_uri: edit/main/docs/
 nav:
   - Introduction: index.md
   - Project initiation: getting_started.md
-  - Distribution Methods: distribution_methods.md
-  - Managing Your App: app_management.md
-  - Mobile App Development Guide: developer.md
-  - Apple App Signing: apple_app_signing.md
-  - Google App Signing: google_app_signing.md
-  - Google Signing For React Native Apps: google_react_native_signing.md
+  - Distribution methods: distribution_methods.md
+  - Managing your app: app_management.md
+  - Mobile app development guide: developer.md
+  - Apple app signing: apple_app_signing.md
+  - Google app signing: google_app_signing.md
+  - Google signing for React Native apps: google_react_native_signing.md
   - Publish your app: publish.md
-  - Encryption Export Regulations: encryption.md
-  - Contact Us: contact.md
+  - Encryption export regulations: encryption.md
+  - Community meetups: meetups.md
+  - Contact us: contact.md
 plugins:
   - techdocs-core
