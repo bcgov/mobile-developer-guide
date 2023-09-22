@@ -46,7 +46,7 @@ To use a GitHub Actions to build and sign your app:
   1. Refer to GitHub's [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) documentation for details
 1. In the Signing & Capabilities -> Release tab in Xcode:
   1. Turn off "automatically manage signing" 
-  1. Select the new provisioning profile in the "Provisioning Profile" drop down box
+  1. Select the new provisioning profile in the "Provisioning Profile" drop-down box
 1. Setup [export options](#exportoptionsplist)
 1. Create [the GitHub Action](#example)
 
