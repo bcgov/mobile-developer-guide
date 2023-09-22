@@ -39,12 +39,14 @@ To use a GitHub Actions to build and sign your app:
 
 1. Send your GitHub repo's name to the [Developer Experience team](contact.md). 
 1. We will give it access to the following secrets:
-  1. `BUILD_CERTIFICATE_BASE64`
-  1. `IOS_BUILD_CERTIFICATE_PASSWD`
+  1. `APPLE_APP_STORE_BUILD_CERTIFICATE_BASE64`
+  1. `APPLE_APP_STORE_BUILD_CERTIFICATE_PASSWD`
 1. Create and download the provisioning profile for your app
 1. Install the provisioning profile as a secret in your repo
   1. Refer to GitHub's [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) documentation for details
-1. In the Signing & Capabilities -> Release tab in Xcode turn off "automatically manage signing" 
+1. In the Signing & Capabilities -> Release tab in Xcode:
+  1. Turn off "automatically manage signing" 
+  1. Select the new provisioning profile in the "Provisioning Profile" drop down box
 1. Setup [export options](#exportoptionsplist)
 1. Create [the GitHub Action](#example)
 
@@ -138,8 +140,8 @@ jobs:
       - name: Install the Apple certificate and provisioning profile
         env:
           # The first two keys are from the bcgov organization secrets
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          P12_PASSWORD: ${{ secrets.IOS_BUILD_CERTIFICATE_PASSWD }}
+          BUILD_CERTIFICATE_BASE64: ${{ secrets.APPLE_APP_STORE_BUILD_CERTIFICATE_BASE64 }}
+          P12_PASSWORD: ${{ secrets.APPLE_APP_STORE_BUILD_CERTIFICATE_PASSWD }}
           # These two keys are from your app's repo secrets
           BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.IOS_PROVISION_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
