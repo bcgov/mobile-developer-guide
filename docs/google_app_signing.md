@@ -1,6 +1,5 @@
 # Google app signing
 
-
 This guide describes how an app team should work with Google keys. You must use the Province of BC's Google Play developer account to distribute your app.
 
 To learn about code signing, review Google's [Sign your app](https://developer.android.com/studio/publish/app-signing) documentation.
@@ -30,6 +29,9 @@ The [bc-wallet-mobile](https://github.com/bcgov/bc-wallet-mobile/blob/main/.gith
 If you're using a different git host, review its documentation on how to create a CI/CD pipeline. Use its secret feature to store the key and password securely.
 
 If you don't use a CI/CD pipeline, store the key and password somewhere securely. 
+
+You may request an upload key reset if the key is lost. Access to this feature is restricted by Google. The account holder from the Developer Experience team will submit the reset request. [Contact us](contact.md) to start this process.
+
 We encourage teams to use a CI/CD pipeline. It provides repeatable builds and safely stores the credentials.
 
 ### App Signing Key
