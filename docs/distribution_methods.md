@@ -20,6 +20,10 @@ Employee apps are distributed through [MDM inTune by the OCIO Device Management 
 
 Apps used by both employees and contractors also need extra setup in Apple's App Store Connect. The [Developer Experience Team](contact.md) will assist in this setup.
 
+### Apple Custom App 
+
+### Apple Enterprise App
+
 ## App review process
 Both the Apple App Store and Google Play Store have an app review process. 
 
