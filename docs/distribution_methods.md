@@ -25,8 +25,9 @@ Employee apps are distributed through [MDM inTune by the OCIO Device Management 
 | App goes through Apple's App Review | Yes | No |
 | App usable with expired signing certificate |  Yes |  No | 
 | App usable with expired provisioning profile |  Yes |  No | 
-| Can be a SaaS solution | Yes | No |
 | Beta test with [TestFlight](https://developer.apple.com/testflight/) | Yes | No |
+| Can be a SaaS solution | Yes | No |
+| Who owns the app's IP | Province of BC or Developer | Province of BC |
 
 An Apple mobile app has both a [signing certificate and a provisioning profile](apple_app_signing.md). App distribution requires these assets. A provisioning profile and Custom App certificate are valid for 1 year. An Enterprise App certificate is valid for 3 years. 
 
@@ -37,24 +38,26 @@ An Apple mobile app has both a [signing certificate and a provisioning profile](
 
 Custom and Public apps do not have this limitation. Your app will work with expired assets. 
 
+The intellectual propery (IP) of a SaaS app belongs to the app's developer. The developer uses their provisioning profile and signing certificate. They are responsible for updating these assets.
+
 ### Apple Custom App 
 
-Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of BC or are a SaaS solution. 
-
-Custom apps go through Apple's app review process. The same app review guidelines for App Store Apps apply to Custom Apps.
+Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of BC or are a SaaS solution. The IP of purpose built apps belongs to the Province of BC. The IP of SaaS apps belong to the developer. 
 
 Custom Apps are licensed from [Apple Business Manager (ABM)](https://support.apple.com/en-ca/guide/apple-business-manager/welcome/web). OCIO Device Management manages ABM. They will assign the app to its MDM-Intune Tenancy and distribute it.
 
 #### Product Owner responsibilities
 
-The Product Owner will [contact OCIO Device Management team](mailto: MDAS@gov.bc.ca) to get the ABM Organization ID. They will provide the ID to the developer.
+The Product Owner will [contact OCIO Device Management team](mailto: MDAS@gov.bc.ca) to get the ABM Organization ID. In the case of a SaaS app, the Product Owner will give the ID to the developer. Otherwise, they will set the ID in [App Store Connect](https://appstoreconnect.apple.com/) for their app. Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
 
 The recommned approach is to use OCIO Device Management Team's ABM. However, it is possible for a Ministry to have its own ABM. The Ministry would handle creating and managing it. As part of the setup it would add the OCIO’s MDM-Intune Organization ID as a location. Contact the OCIO Device Management Team for details.
 
 
 #### Developer responsibilities
 
-The developer handles developing the app and uploading it to [App Store Connect](https://appstoreconnect.apple.com). They will make the Custom App available to the appropriate ABM. Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for  instructions.
+The developer handles developing the app and uploading it to [App Store Connect](https://appstoreconnect.apple.com). Custom apps go through [Apple's app review](https://developer.apple.com/app-store/review/) process. The same app review guidelines for App Store Apps apply to Custom Apps. The developer will ensure the app meets the guidelines.
+
+In the case of a SaaS app, the develoepr will make it available to our ABM Organization ID. The developer will get the ID from the Product Owner and set it in [App Store Connect](https://appstoreconnect.apple.com/). Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
 
 
 #### OCIO Device Management team responsibilities
@@ -64,7 +67,9 @@ The OCIO Device Management Team will distribute the app to employee devices. The
 
 ### Apple Enterprise App
 
-Use this distribution method for internal apps used only by employees. These apps are specifically made for the Province and are not SaaS solutions. This distribution method is for apps that can't go through Apple's app review process.  [Contact the Developer Experience team](contact.md) before choosing this method. 
+Use this distribution method for internal apps used only by employees. These apps are specifically made for the Province and are not SaaS solutions. The Province of BC holds the IP of these apps. They are signed with the Province's signing certificate.
+
+This distribution method is for apps that can't go through Apple's app review process.  [Contact the Developer Experience team](contact.md) before choosing this method. 
 
 
 #### Product Owner responsibilities
