@@ -5,13 +5,16 @@ Mobile apps are distributed through the public app stores or MDM InTune. Your di
 ![Diagram of the various distribution methods. If the app is for the general public, it's distributed via the Apple App Store and Google Play Stores. If it's an app for Government employees, it's distributed via MDM inTunes. If it's an app for Employees and Contractors it is distributed as an unlisted app via the Apple App Store.](assets/distribution.drawio.svg)
 
 ## Public apps
-Public apps are released through the Province's accounts on the Apple App Store and Google Play Store. 
+Public apps are released through the Province's accounts on the Apple App Store and Google Play Store. These apps are used by the general public.
 
-You must list your app through the Province's accounts. The [Developer Experience team](contact.md) helps you get your app on these accounts.
+You must list your app through the Province's accounts. The [Developer Experience team](contact.md) will help you get your app on these accounts.
+
+[Contact us](contact.md) if your app's intellectual property (IP) doesn't belong to the Province of BC. We will work with you to determine how to release your app.
 
 Before contacting the Developer Experience team, we recommend reviewing the [project initiation information](getting_started.md).
 
 Once setup is complete, you'll have access to [App Store Connect](https://appstoreconnect.apple.com) and [Google Play Console](https://play.google.com/console/about/) to manage your app.
+
 
 ## Internal apps
 Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](https://citz.sp.gov.bc.ca/sites/ES/DS/MDAS/Docs/SitePages/Home.aspx). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). 
