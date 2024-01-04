@@ -1,9 +1,8 @@
 # Apple signing
 
-This guide details how to work with signing certificates.
+This guide details how to work with apps signed by the Province's signing certificate. SaaS apps will be signed by the developer's own certificate. Refer to [Custom Apps](distribution_methods.md#apple-custom-app) for details on those apps.
 
 To learn about code signing, review Apple's [code signing](https://help.apple.com/xcode/mac/current/#/devfbe995ebf) documentation. 
-
 
 ## Certificates
 Apple provides 2 types of certificates:
