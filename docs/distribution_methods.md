@@ -18,18 +18,74 @@ Employee apps are distributed through [MDM inTune by the OCIO Device Management 
 
 [Contact us](contact.md) at the start of your project so we can discuss the process for distributing an internal app. It requires setup from both the Developer Experience and OCIO Device Management teams.
 
-Apps used by both employees and contractors also need extra setup in Apple's App Store Connect. The [Developer Experience Team](contact.md) will assist in this setup.
-
 ### Apple Custom App 
 
+Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of BC or are a SaaS solution. 
+
+Custom apps go through Apple's app review process. The same app review guidelines for App Store Apps apply to Custom Apps.
+
+Custom Apps are licensed from [Apple Business Manager (ABM)](https://support.apple.com/en-ca/guide/apple-business-manager/welcome/web) and assigned to the OCIO Device Management team's Intune Tenancy. They will distribute the app through MDM-Intune. 
+
+#### Product Owner responsibilities
+
+The Product Owner will work with the relevant teams to decide whether to use the OCIO’s ABM or the Ministry’s own ABM.
+
+If the Ministry decides to use its own ABM, it would need to create and manage it. As part of the setup it would add the OCIO’s MDM-Intune Organization ID as a location.
+
+The Product Owner will provide the ABM ID to the developer.
+
+
+#### Developer responsibilities
+
+The developer handles developing the app and uploading it to [App Store Connect](https://appstoreconnect.apple.com). They will make the Custom App available to the appropriate ABM. Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for  instructions.
+
+
+#### OCIO Device Management team responsibilities
+
+The OCIO Device Management Team will distribute the app to employee devices. They will work with the Product Owner to schedule the release.
+
+
 ### Apple Enterprise App
+
+Use this distribution method for internal apps used only by employees. These apps are specifically made for the Province and are not SaaS solutions. This distribution method is for apps that can't go through Apple's app review process.
+
+
+#### Product Owner responsibilities
+
+The Product Owner will work with the Developer Experience team to decide which GitHub organization will host the project's code.
+
+They will get the binary from the developer and provide it to the OCIO Device Management team.
+
+#### Developer resposibilities
+
+The developer handles developing the app and providing the binary to the Product Owner. A repeatable CI/CD pipeline is expected as part of this process.
+
+
+#### OCIO Device Management team resposibilities
+
+The OCIO Device Management Team will distribute the app to employee devices. They will work with the Product Owner to schedule the release.
+
+### Enterprise vs Custom App
+
+|    | Enterprise  App | Custom App |
+| -- | --------------- | ---------- |
+| App goes through Apple's App Review | No | Yes |
+| App usable with expired certificate |  No |  Yes | 
+| App usable with expired provisioning profile |  No |  Yes | 
+| Can be a SaaS solution | No | Yes |
+| TestFlight | No | Yes |
+
+
+### Apple Unlisted App
+
+Use this method when your app is an internal app used by employees and contractors. Refer to [Apple's documentation](https://developer.apple.com/support/unlisted-app-distribution/) on how to distribute unlisted apps. These apps require some extra setup in App Store Connect. The [Developer Experience team](contact.md) will assist in this setup.
+
+Unlisted apps will go through Apple's app review process. Ensure your app meets [Apple's guidelines](https://developer.apple.com/app-store/review/).
 
 ## App review process
 Both the Apple App Store and Google Play Store have an app review process. 
 
 When creating your app, it's important to consider how the app reviewer will interact with your app. For example, if your app requires a user to login, the app reviewer will need either an account or access to a demo account. 
-
-If you believe your internal app can't go through the app review process, contact the [Developer Experience team](contact.md) for guidance.
 
 Consult the [Apple app guidelines](https://developer.apple.com/app-store/review/) and [Google app guidelines](https://support.google.com/googleplay/android-developer/answer/9859455?hl=en&ref_topic=7072031&sjid=10634496881788336983-NA) when preparing your app's release. It's important to follow their guidelines to ensure a smooth review process.
 
