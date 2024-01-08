@@ -2,7 +2,7 @@
 
 Mobile apps are distributed through the public app stores or MDM InTune. Your distribution method is determined by who will use your app.
 
-![Diagram of the various distribution methods. If the app is for the general public, it's distributed via the Apple App Store and Google Play Stores. If it's an app for Government employees, it's distributed via MDM inTunes. If it's an app for Employees and Contractors it is distributed as an unlisted app via the Apple App Store.](assets/distribution.drawio.svg)
+![Diagram of the various distribution methods. If the app is for the general public, it's distributed via the Apple App Store and Google Play Stores. If it's an app for Government employees, it's distributed via MDM inTunes. If it's an app for Employees and Contractors, it is distributed as an unlisted app via the Apple App Store.](assets/distribution.drawio.svg)
 
 ## Public apps
 Public apps are released through the Province's accounts on the Apple App Store and Google Play Store. These apps are used by the general public.
@@ -17,7 +17,7 @@ Once setup is complete, you'll have access to [App Store Connect](https://appsto
 
 
 ## Internal apps
-Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](https://citz.sp.gov.bc.ca/sites/ES/DS/MDAS/Docs/SitePages/Home.aspx). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). 
+Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](mailto: MDAS@gov.bc.ca). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). 
 
 [Contact us](contact.md) at the start of your project so we can discuss the process for distributing an internal app. It requires setup from both the Developer Experience and OCIO Device Management teams.
 
@@ -37,15 +37,15 @@ An Apple mobile app has both a [signing certificate and a provisioning profile](
 !!! warning
     If the assets of an Enterprise App expire, then the app will not work. This means your users can't use your app. 
     
-    The Product Owner must schedule yearly updates to these assets so they don't expire.
+    The Product Owner must schedule yearly updates to these assets, so they don't expire.
 
 Custom and Public apps do not have this limitation. Your app will work with expired assets. 
 
-The intellectual propery (IP) of a SaaS app belongs to the app's developer. The developer uses their provisioning profile and signing certificate. They are responsible for updating these assets.
+The intellectual property (IP) of a SaaS app belongs to the app's developer. The developer uses their provisioning profile and signing certificate. They are responsible for updating these assets.
 
 ### Apple Custom App 
 
-Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of BC or are a SaaS solution. The IP of purpose built apps belongs to the Province of BC. The IP of SaaS apps belong to the developer. 
+Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of BC or are a SaaS solution. The IP of purpose-built apps belongs to the Province of BC. The IP of SaaS apps belong to the developer. 
 
 Custom Apps are licensed from [Apple Business Manager (ABM)](https://support.apple.com/en-ca/guide/apple-business-manager/welcome/web). OCIO Device Management manages ABM. They will assign the app to its MDM-Intune Tenancy and distribute it.
 
@@ -53,14 +53,14 @@ Custom Apps are licensed from [Apple Business Manager (ABM)](https://support.app
 
 The Product Owner will [contact OCIO Device Management team](mailto: MDAS@gov.bc.ca) to get the ABM Organization ID. In the case of a SaaS app, the Product Owner will give the ID to the developer. Otherwise, they will set the ID in [App Store Connect](https://appstoreconnect.apple.com/) for their app. Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
 
-The recommned approach is to use OCIO Device Management Team's ABM. However, it is possible for a Ministry to have its own ABM. The Ministry would handle creating and managing it. As part of the setup it would add the OCIO’s MDM-Intune Organization ID as a location. Contact the OCIO Device Management Team for details.
+The recommended approach is to use OCIO Device Management Team's ABM. However, it is possible for a Ministry to have its own ABM. The Ministry would handle creating and managing it. As part of the setup, it would add the OCIO’s MDM-Intune Organization ID as a location. Contact the OCIO Device Management Team for details.
 
 
 #### Developer responsibilities
 
 The developer handles developing the app and uploading it to [App Store Connect](https://appstoreconnect.apple.com). Custom apps go through [Apple's app review](https://developer.apple.com/app-store/review/) process. The same app review guidelines for App Store Apps apply to Custom Apps. The developer will ensure the app meets the guidelines.
 
-In the case of a SaaS app, the develoepr will make it available to our ABM Organization ID. The developer will get the ID from the Product Owner and set it in [App Store Connect](https://appstoreconnect.apple.com/). Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
+In the case of a SaaS app, the developer will make it available to our ABM Organization ID. The developer will get the ID from the Product Owner and set it in [App Store Connect](https://appstoreconnect.apple.com/). Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
 
 
 #### OCIO Device Management team responsibilities
@@ -81,12 +81,12 @@ The Product Owner will work with the Developer Experience team to decide which [
 
 They will get the app's binary from the developer and provide it to the OCIO Device Management team.
 
-#### Developer resposibilities
+#### Developer responsibilities
 
 The developer handles developing the app and providing the binary to the Product Owner. A repeatable CI/CD pipeline is expected as part of this process.
 
 
-#### OCIO Device Management team resposibilities
+#### OCIO Device Management team responsibilities
 
 The OCIO Device Management Team will distribute the app to employee devices. They will work with the Product Owner to schedule the release.
 
