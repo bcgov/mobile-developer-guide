@@ -17,7 +17,7 @@ Once setup is complete, you'll have access to [App Store Connect](https://appsto
 
 
 ## Internal apps
-Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](mailto: MDAS@gov.bc.ca). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). 
+Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](mailto:MDAS@gov.bc.ca). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). 
 
 [Contact us](contact.md) at the start of your project so we can discuss the process for distributing an internal app. It requires setup from both the Developer Experience and OCIO Device Management teams.
 
@@ -51,7 +51,7 @@ Custom Apps are licensed from [Apple Business Manager (ABM)](https://support.app
 
 #### Product Owner responsibilities
 
-The Product Owner will [contact OCIO Device Management team](mailto: MDAS@gov.bc.ca) to get the ABM Organization ID. In the case of a SaaS app, the Product Owner will give the ID to the developer. Otherwise, they will set the ID in [App Store Connect](https://appstoreconnect.apple.com/) for their app. Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
+The Product Owner will [contact OCIO Device Management team](mailto:MDAS@gov.bc.ca) to get the ABM Organization ID. In the case of a SaaS app, the Product Owner will give the ID to the developer. Otherwise, they will set the ID in [App Store Connect](https://appstoreconnect.apple.com/) for their app. Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
 
 The recommended approach is to use OCIO Device Management Team's ABM. However, it is possible for a Ministry to have its own ABM. The Ministry would handle creating and managing it. As part of the setup, it would add the OCIO’s MDM-Intune Organization ID as a location. Contact the OCIO Device Management Team for details.
 
