@@ -45,7 +45,7 @@ The intellectual property (IP) of a SaaS app belongs to the app's developer. The
 
 ### Apple Custom App 
 
-Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of BC or are a SaaS solution. The IP of purpose-built apps belongs to the Province of BC. The IP of SaaS apps belong to the developer. 
+Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of BC or are a SaaS solution not available on the public app store. The IP of purpose-built apps belongs to the Province of BC. The IP of SaaS apps belong to the developer. 
 
 Custom Apps are licensed from [Apple Business Manager (ABM)](https://support.apple.com/en-ca/guide/apple-business-manager/welcome/web). OCIO Device Management manages ABM. They will assign the app to its MDM-Intune Tenancy and distribute it.
 
