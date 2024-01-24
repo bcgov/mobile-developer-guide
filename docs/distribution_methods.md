@@ -2,30 +2,105 @@
 
 Mobile apps are distributed through the public app stores or MDM InTune. Your distribution method is determined by who will use your app.
 
-![Diagram of the various distribution methods. If the app is for the general public, it's distributed via the Apple App Store and Google Play Stores. If it's an app for Government employees, it's distributed via MDM inTunes. If it's an app for Employees and Contractors it is distributed as an unlisted app via the Apple App Store.](assets/distribution.drawio.svg)
+![Diagram of the various distribution methods. If the app is for the general public, it's distributed via the Apple App Store and Google Play Stores. If it's an app for Government employees, it's distributed via MDM inTunes. If it's an app for Employees and Contractors, it is distributed as an unlisted app via the Apple App Store.](assets/distribution.drawio.svg)
 
 ## Public apps
-Public apps are released through the Province's accounts on the Apple App Store and Google Play Store. 
+Public apps are released through the Province's accounts on the Apple App Store and Google Play Store. These apps are used by the general public.
 
-You must list your app through the Province's accounts. The [Developer Experience team](contact.md) helps you get your app on these accounts.
+You must list your app through the Province's accounts. The [Developer Experience team](contact.md) will help you get your app on these accounts.
+
+[Contact us](contact.md) if your app's intellectual property (IP) doesn't belong to the Province of B.C. We will work with you to determine how to release your app.
 
 Before contacting the Developer Experience team, we recommend reviewing the [project initiation information](getting_started.md).
 
 Once setup is complete, you'll have access to [App Store Connect](https://appstoreconnect.apple.com) and [Google Play Console](https://play.google.com/console/about/) to manage your app.
 
+
 ## Internal apps
-Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](https://citz.sp.gov.bc.ca/sites/ES/DS/MDAS/Docs/SitePages/Home.aspx). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). 
+Employee apps are distributed through [MDM inTune by the OCIO Device Management Team](mailto:MDAS@gov.bc.ca). While historically, employee apps only supported iOS devices, they're now also supported by Android. If you're planning to create an internal Android app, [contact us](contact.md). 
 
 [Contact us](contact.md) at the start of your project so we can discuss the process for distributing an internal app. It requires setup from both the Developer Experience and OCIO Device Management teams.
 
-Apps used by both employees and contractors also need extra setup in Apple's App Store Connect. The [Developer Experience Team](contact.md) will assist in this setup.
+### Apple Custom App vs Enterprise App
+
+|    | Apple Custom  App | Apple Enterprise App |
+| -- | --------------- | ---------- |
+| App goes through Apple's App Review | Yes | No |
+| App usable with expired signing certificate |  Yes |  No | 
+| App usable with expired provisioning profile |  Yes |  No | 
+| Beta test with [TestFlight](https://developer.apple.com/testflight/) | Yes | No |
+| Can be a SaaS solution | Yes | No |
+| Who owns the app's IP | Province of B.C. or Developer | Province of B.C. |
+
+An Apple mobile app has both a [signing certificate and a provisioning profile](apple_app_signing.md). App distribution requires these assets. A provisioning profile and Custom App certificate are valid for 1 year. An Enterprise App certificate is valid for 3 years. 
+
+!!! warning
+    If the assets of an Enterprise App expire, then the app will not work. This means your users can't use your app. 
+    
+    The Product Owner must schedule yearly updates to these assets, so they don't expire.
+
+Custom and Public apps do not have this limitation. Your app will work with expired assets. 
+
+The intellectual property (IP) of a SaaS app belongs to the app's developer. The developer uses their provisioning profile and signing certificate. They are responsible for updating these assets.
+
+### Apple Custom App 
+
+Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of B.C. or are a SaaS solution not available on the public app store. The IP of purpose-built apps belongs to the Province of B.C. The IP of SaaS apps belong to the developer. 
+
+Custom Apps are licensed from [Apple Business Manager (ABM)](https://support.apple.com/en-ca/guide/apple-business-manager/welcome/web). OCIO Device Management manages ABM. They will assign the app to its MDM-Intune Tenancy and distribute it.
+
+#### Product Owner responsibilities
+
+The Product Owner will [contact OCIO Device Management team](mailto:MDAS@gov.bc.ca) to get the ABM Organization ID. In the case of a SaaS app, the Product Owner will give the ID to the developer. Otherwise, they will set the ID in [App Store Connect](https://appstoreconnect.apple.com/) for their app. Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
+
+The recommended approach is to use OCIO Device Management Team's ABM. However, it is possible for a Ministry to have its own ABM. The Ministry would handle creating and managing it. As part of the setup, it would add the OCIO’s MDM-Intune Organization ID as a location. Contact the OCIO Device Management Team for details.
+
+
+#### Developer responsibilities
+
+The developer handles developing the app and uploading it to [App Store Connect](https://appstoreconnect.apple.com). Custom apps go through [Apple's app review](https://developer.apple.com/app-store/review/) process. The same app review guidelines for App Store Apps apply to Custom Apps. The developer will ensure the app meets the guidelines.
+
+In the case of a SaaS app, the developer will make it available to our ABM Organization ID. The developer will get the ID from the Product Owner and set it in [App Store Connect](https://appstoreconnect.apple.com/). Refer to Apple's [Distributing Custom Apps](https://developer.apple.com/custom-apps/) documentation for instructions.
+
+
+#### OCIO Device Management team responsibilities
+
+The OCIO Device Management Team will distribute the app to employee devices. They will work with the Product Owner to schedule the release.
+
+
+### Apple Enterprise App
+
+Use this distribution method for internal apps used only by employees. These apps are specifically made for the Province and are not SaaS solutions. The Province of B.C. holds the IP of these apps. They are signed with the Province's signing certificate.
+
+This distribution method is for apps that can't go through Apple's app review process.  [Contact the Developer Experience team](contact.md) before choosing this method. 
+
+
+#### Product Owner responsibilities
+
+The Product Owner will work with the Developer Experience team to decide which [GitHub organization](https://mvp.developer.gov.bc.ca/docs/default/component/bc-developer-guide/use-github-in-bcgov/bc-government-organizations-in-github/) will host the project's code.
+
+They will get the app's binary from the developer and provide it to the OCIO Device Management team.
+
+#### Developer responsibilities
+
+The developer handles developing the app and providing the binary to the Product Owner. A repeatable CI/CD pipeline is expected as part of this process.
+
+
+#### OCIO Device Management team responsibilities
+
+The OCIO Device Management Team will distribute the app to employee devices. They will work with the Product Owner to schedule the release.
+
+
+### Apple Unlisted App
+
+Use this method when your app is an internal app used by employees and contractors. Refer to [Apple's documentation](https://developer.apple.com/support/unlisted-app-distribution/) on how to distribute unlisted apps. These apps require some extra setup in App Store Connect. The [Developer Experience team](contact.md) will assist in this setup.
+
+Unlisted apps will go through Apple's app review process. Ensure your app meets [Apple's guidelines](https://developer.apple.com/app-store/review/).
 
 ## App review process
 Both the Apple App Store and Google Play Store have an app review process. 
 
 When creating your app, it's important to consider how the app reviewer will interact with your app. For example, if your app requires a user to login, the app reviewer will need either an account or access to a demo account. 
-
-If you believe your internal app can't go through the app review process, contact the [Developer Experience team](contact.md) for guidance.
 
 Consult the [Apple app guidelines](https://developer.apple.com/app-store/review/) and [Google app guidelines](https://support.google.com/googleplay/android-developer/answer/9859455?hl=en&ref_topic=7072031&sjid=10634496881788336983-NA) when preparing your app's release. It's important to follow their guidelines to ensure a smooth review process.
 
