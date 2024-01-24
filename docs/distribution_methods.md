@@ -9,7 +9,7 @@ Public apps are released through the Province's accounts on the Apple App Store 
 
 You must list your app through the Province's accounts. The [Developer Experience team](contact.md) will help you get your app on these accounts.
 
-[Contact us](contact.md) if your app's intellectual property (IP) doesn't belong to the Province of BC. We will work with you to determine how to release your app.
+[Contact us](contact.md) if your app's intellectual property (IP) doesn't belong to the Province of B.C. We will work with you to determine how to release your app.
 
 Before contacting the Developer Experience team, we recommend reviewing the [project initiation information](getting_started.md).
 
@@ -30,7 +30,7 @@ Employee apps are distributed through [MDM inTune by the OCIO Device Management 
 | App usable with expired provisioning profile |  Yes |  No | 
 | Beta test with [TestFlight](https://developer.apple.com/testflight/) | Yes | No |
 | Can be a SaaS solution | Yes | No |
-| Who owns the app's IP | Province of BC or Developer | Province of BC |
+| Who owns the app's IP | Province of B.C. or Developer | Province of B.C. |
 
 An Apple mobile app has both a [signing certificate and a provisioning profile](apple_app_signing.md). App distribution requires these assets. A provisioning profile and Custom App certificate are valid for 1 year. An Enterprise App certificate is valid for 3 years. 
 
@@ -45,7 +45,7 @@ The intellectual property (IP) of a SaaS app belongs to the app's developer. The
 
 ### Apple Custom App 
 
-Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of BC or are a SaaS solution not available on the public app store. The IP of purpose-built apps belongs to the Province of BC. The IP of SaaS apps belong to the developer. 
+Use this distribution method for internal apps used only by employees. These apps are either made specifically for the Province of B.C. or are a SaaS solution not available on the public app store. The IP of purpose-built apps belongs to the Province of B.C. The IP of SaaS apps belong to the developer. 
 
 Custom Apps are licensed from [Apple Business Manager (ABM)](https://support.apple.com/en-ca/guide/apple-business-manager/welcome/web). OCIO Device Management manages ABM. They will assign the app to its MDM-Intune Tenancy and distribute it.
 
@@ -70,7 +70,7 @@ The OCIO Device Management Team will distribute the app to employee devices. The
 
 ### Apple Enterprise App
 
-Use this distribution method for internal apps used only by employees. These apps are specifically made for the Province and are not SaaS solutions. The Province of BC holds the IP of these apps. They are signed with the Province's signing certificate.
+Use this distribution method for internal apps used only by employees. These apps are specifically made for the Province and are not SaaS solutions. The Province of B.C. holds the IP of these apps. They are signed with the Province's signing certificate.
 
 This distribution method is for apps that can't go through Apple's app review process.  [Contact the Developer Experience team](contact.md) before choosing this method. 
 
