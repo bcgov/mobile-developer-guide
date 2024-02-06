@@ -6,4 +6,12 @@ Interested in presenting at a meetup? [Contact the Developer Experience](contact
 
 ## Previous meetups
 
-* <a href="../assets/mobile_meetup_09132023.pptx" download>September 13, 2023</a>
+### 2024
+
+* <a href="../assets/mobile_meetup-06-Feb-2024.pdf" download>February 6, 2024</a>
+
+### 2023
+
+* <a href="../assets/mobile_meetup_09132023.pdf" download>September 13, 2023</a>
+
+
