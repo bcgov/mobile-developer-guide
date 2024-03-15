@@ -18,3 +18,4 @@ nav:
   - Contact us: contact.md
 plugins:
   - techdocs-core
+  - git-revision-date-localized

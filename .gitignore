@@ -22,3 +22,4 @@ site
 
 # devhub-techdocs-publish build output
 patcher.py
+test_patcher.py
