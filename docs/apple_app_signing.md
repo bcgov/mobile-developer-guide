@@ -234,6 +234,17 @@ After the App Manager has given you the permissions in the above step, go into X
 We encourage you to use a CI/CD pipeline to build and release your app. It allows for repeatable builds and removes reliance on a developer's computer.
 
 
+### Troubleshooting automatic signing
+
+**Problem**
+
+During the signing process, XCode displays an error stating the certificate is invalid.
+
+**Solution**
+
+Delete old signing certificates manually from the the Mac's keychain.
+
+
 ## Provisioning profiles
 
 Provisioning profiles links the bundle id with a certificate and optional associated devices. As with certificates, there are also development and distribution provisioning profiles.
