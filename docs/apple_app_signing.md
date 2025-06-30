@@ -99,6 +99,8 @@ This is a basic GitHub Action that builds and signs an app.
 
 ```yaml
 name: Build
+permissions:
+  contents: read
 on: 
   push:
     branches: [ "main" ]
@@ -118,14 +120,14 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Display XCode Path for debug
         run: |
           xcode-select -p  
 
       - name: Cache Pods
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
@@ -195,15 +197,140 @@ jobs:
           -exportOptionsPlist exportOptions.plist \
           -verbose
       
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: ios-release
-          path: ${{ env.EXPORT_DIR }}
-          if-no-files-found: error
-          retention-days: 5
+      # The following steps provide examples of storing the build artifact. These examples are 
+      # not an exhaustive list 
+
+      # Uncomment the following lines if you want to upload the build artifact to GitHub Actions
+      # Warning: If this is in a public repository, the artifact will be publicly accessible. Anyone
+      # can download it.
+      # If you want to keep the artifact private, consider using a different storage solution.
+
+      # - name: Upload a Build Artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: ios-release
+      #     path: ${{ env.EXPORT_DIR }}
+      #     if-no-files-found: error
+      #     retention-days: 3
+
+     
+
+      # Uncomment the following lines to use common object storage (S3) accessed with MinIO client.
+      # Note: Ensure object storage is set up and configured correctly in your repository secrets.        
+      # This example uses the common object storage and not AWS S3
+      # - name: Upload to S3
+      #   env:
+      #     MINIO_ACCESS_KEY_ID: ${{ secrets.MINIO_ACCESS_KEY }}
+      #     MINIO_SECRET_ACCESS_KEY: ${{ secrets.MINIO_SECRET_KEY }}
+      #     MINIO_ENDPOINT: ${{ secrets.MINIO_ENDPOINT }} 
+      #     MINIO_BUCKET: ${{ vars.MINIO_BUCKET }}
+      #     MINIO_ALIAS: ${{ vars.MINIO_ALIAS }} 
+      #   run: |
+      #     echo "installing MinIO client"
+      #     brew install minio/stable/mc
+
+      #     mc alias set $MINIO_ALIAS $MINIO_ENDPOINT $MINIO_ACCESS_KEY_ID $MINIO_SECRET_ACCESS_KEY
+          
+      #     echo "Copying $EXPORT_DIR"
+      #     mc mirror --overwrite --remove $EXPORT_DIR $MINIO_ALIAS/$MINIO_BUCKET/$EXPORT_DIR
+          
+      
+      # Uncomment the following lines if you want to push the build to bcgov's artifactory
+      # Note: Ensure that the JFrog CLI is set up and configured correctly in your repository secrets.    
+
+      # - name: Setup JFrog CLI
+      #   uses: jfrog/setup-jfrog-cli@v4
+      #   with:
+      #     disable-job-summary: true
+      #   env: 
+      #     JF_PROJECT: ${{ vars.ARTIFACTORY_PROJECT }}
+      #     JF_URL: ${{ vars.ARTIFACTORY_URL }}
+      #     JF_USER: ${{ secrets.ARTIFACTORY_SERVICE_ACCOUNT_USER  }}
+      #     JF_PASSWORD: ${{ secrets.ARTIFACTORY_SERVICE_ACCOUNT_PWD }}
+
+     
+      # - name: Push Build to Artifactory
+      #   run: |
+      #     export JFROG_CLI_LOG_LEVEL=DEBUG
+      #     jf rt upload "$EXPORT_DIR/*" ${{ vars.ARTIFACTORY_REPO_NAME }} 
 ```
 
+#### Notes about upload options
+
+1. GitHub 
+  1. Using the `actions/upload-artifact` action will store it on GitHub.
+  1. **Warning:** If this is in a public repository, the artifact will be publicly accessible. Anyone can download it.
+1. S3
+  1. This example uses [S3-compatible Object Storage](docs/default/component/platform-developer-docs/docs/platform-architecture-reference/platform-storage/#s3-compatible-object-storage-dell-emc-elastic-cloud-storage)
+1. Artifactory
+  1. [Learn how to setup Artifactory](docs/default/component/platform-developer-docs/docs/build-deploy-and-maintain-apps/setup-artifactory-project-repository/)
+  1. Use Artifactory if your app is an [internal app](distribution_methods.md#internal-apps). [Contact us](contact.md) for help with setting it up.
+
+
+### Maui/.NET build example
+
+Maui/.NET build may require the certificate and provisioning profile names. This partial workflow shows how to extract those names. 
+
+**build.yaml**
+```yaml
+- name: Retrieve certificate name
+  env:
+    APPLE_ENTERPRISE_BUILD_CERTIFICATE_BASE_64: ${{ secrets.APPLE_ENTERPRISE_BUILD_CERTIFICATE_BASE_64 }}
+    TEMP_CERT_PATH: "temp-cert.p12"
+  run: |
+    echo -n "$APPLE_ENTERPRISE_BUILD_CERTIFICATE_BASE_64" | base64 --decode -o $TEMP_CERT_PATH
+    SUBJECT=$(openssl pkcs12 -in "$TEMP_CERT_PATH" \
+      -password pass:"${{ secrets.APPLE_ENTERPRISE_BUILD_CERTIFICATE_PASSWORD }}" \
+      -nodes -nokeys \
+      | openssl x509 -noout -subject)
+    COMMON_NAME=$(./.github/scripts/get_common_name.sh "$SUBJECT")
+    echo "IOS_BUILD_CERTIFICATE_NAME=$COMMON_NAME" >> "$GITHUB_ENV"
+    rm $TEMP_CERT_PATH
+- name: Install provisioning profile and retrieve name
+  env:
+    IOS_BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.IOS_BUILD_PROVISION_PROFILE_BASE64 }}
+  run: |
+    PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+    echo -n "$IOS_BUILD_PROVISION_PROFILE_BASE64" | base64 --decode -o $PP_PATH
+    # Apply provisioning profile
+    mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+    cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+    # Retrieve profile name
+    echo "IOS_CODE_SIGN_PROVISION_PROFILE_NAME=$(/usr/libexec/PlistBuddy \
+      -c 'Print Name' /dev/stdin \
+      <<< $(security cms -D -i $PP_PATH))" >> "$GITHUB_ENV"
+
+```
+
+**get_common_name.sh**
+```bash
+#!/bin/bash
+
+# From a certificate's subject string, get the common name
+process_string() {
+    input_string="$1"
+
+    IFS=',/' read -ra parts <<< "$input_string"
+    
+    # Loop through each part
+    for part in "${parts[@]}"; do
+        # Trim any leading or trailing spaces using sed
+        trimmed_part=$(echo "$part" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+        # Check if the part starts with "CN"
+        if [[ "$trimmed_part" =~ ^CN ]]; then
+            # Extract the string after the first "=" and remove any surrounding whitespace
+            result=$(echo "$trimmed_part" | sed 's/^[^=]*=[[:space:]]*\(.*\)/\1/')
+            echo "$result"
+            return
+        fi
+    done
+
+    echo "No CN found"
+}
+
+process_string "$1"
+```
 ## Laptop build
 Are you releasing your app from a developer's laptop? Use XCode's "automatically manage signing" feature to sign your app. 
 
