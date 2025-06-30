@@ -86,6 +86,8 @@ Example of a basic GitHub Action:
 
 ```yaml
 name: Build
+permissions:
+  contents: read
 on: 
   push:
     branches: [ "main" ]
@@ -101,20 +103,20 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3 
+        uses: actions/setup-node@v4 
         with:
             cache: 'yarn'
-            node-version: 19
+            node-version: 20
 
       - name: Install node modules
         run: |
           yarn install --frozen-lockfile
 
       - name: Setup Gradle 
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
 
       # The keystore was base64 encoded. It must be decoded in order to use it
       - name: Decode keystore file
@@ -134,15 +136,74 @@ jobs:
         run: |
             npx react-native build-android --mode=release
        
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-            name: Signed App Bundle
-            # This is the default path where the bundle is created
-            path: android/app/build/outputs/bundle/release/app-release.aab
-            if-no-files-found: error
-            retention-days: 7    
+      # The following steps provide examples of storing the build artifact. These examples are 
+      # not an exhaustive list 
+
+      # Uncomment the following lines if you want to upload the build artifact to GitHub Actions
+      # Warning: If this is in a public repository, the artifact will be publicly accessible. Anyone
+      # can download it.
+      # If you want to keep the artifact private, consider using a different storage solution.
+
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: android-release
+      #     path: android/app/build/outputs/bundle/release/app-release.aab
+      #     if-no-files-found: error
+      #     retention-days: 3
+
+      # Uncomment the following lines to use common object storage (S3) accessed with MinIO client.
+      # Note: Ensure object storage is set up and configured correctly in your repository secrets.        
+      # This example uses the common object storage and not AWS S3
+      #  - name: Upload to S3
+      #    env:
+      #      MINIO_ACCESS_KEY_ID: ${{ secrets.MINIO_ACCESS_KEY }}
+      #      MINIO_SECRET_ACCESS_KEY: ${{ secrets.MINIO_SECRET_KEY }}
+      #      MINIO_ENDPOINT: ${{ secrets.MINIO_ENDPOINT }} 
+      #      MINIO_BUCKET: ${{ vars.MINIO_BUCKET }}
+      #      MINIO_ALIAS: ${{ vars.MINIO_ALIAS }} 
+      #    run: |
+      #      echo "installing MinIO client"
+      #      curl https://dl.min.io/client/mc/release/linux-amd64/mc \
+      #      --create-dirs \
+      #      -o $HOME/minio-binaries/mc
+      #      chmod +x $HOME/minio-binaries/mc
+      #      export PATH=$PATH:$HOME/minio-binaries/
+      #      mc alias set $MINIO_ALIAS $MINIO_ENDPOINT $MINIO_ACCESS_KEY_ID $MINIO_SECRET_ACCESS_KEY
+           
+      #      echo "Copying app-release.aab to MinIO bucket"
+      #      mc cp android/app/build/outputs/bundle/release/app-release.aab $MINIO_ALIAS/$MINIO_BUCKET/app-release.aab   
+       
+      # Uncomment the following lines if you want to push the build to bcgov's artifactory
+      # Note: Ensure that the JFrog CLI is set up and configured correctly in your repository secrets.    
+      # - name: Setup JFrog CLI
+      #   uses: jfrog/setup-jfrog-cli@v4
+      #   with:
+      #     disable-job-summary: true
+      #   env: 
+      #     JF_PROJECT: ${{ vars.ARTIFACTORY_PROJECT }}
+      #     JF_URL: ${{ vars.ARTIFACTORY_URL }}
+      #     JF_USER: ${{ secrets.ARTIFACTORY_SERVICE_ACCOUNT_USER  }}
+      #     JF_PASSWORD: ${{ secrets.ARTIFACTORY_SERVICE_ACCOUNT_PWD }}
+      # - name: Push Build to Artifactory
+      #   run: |
+      #     export JFROG_CLI_LOG_LEVEL=DEBUG
+      #     jf rt upload android/app/build/outputs/bundle/release/app-release.aab ${{ vars.ARTIFACTORY_REPO_NAME }}
+
 ```
+
+#### Notes about upload options
+
+1. GitHub 
+  1. Using the `actions/upload-artifact` action will store it on GitHub.
+  1. **Warning:** If this is in a public repository, the artifact will be publicly accessible. Anyone can download it.
+1. S3
+  1. This example uses [S3-compatible Object Storage](docs/default/component/platform-developer-docs/docs/platform-architecture-reference/platform-storage/#s3-compatible-object-storage-dell-emc-elastic-cloud-storage)
+1. Artifactory
+  1. [Learn how to setup Artifactory](docs/default/component/platform-developer-docs/docs/build-deploy-and-maintain-apps/setup-artifactory-project-repository/)
+  1. Use Artifactory if your app is an [internal app](distribution_methods.md#internal-apps). [Contact us](contact.md) for help with setting it up. for help with setting it up.
+
+
 
 ## Upload the build
 
