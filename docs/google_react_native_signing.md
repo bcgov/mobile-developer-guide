@@ -198,9 +198,9 @@ jobs:
   1. Using the `actions/upload-artifact` action will store it on GitHub.
   1. **Warning:** If this is in a public repository, the artifact will be publicly accessible. Anyone can download it.
 1. S3
-  1. This example uses [S3-compatible Object Storage](docs/default/component/platform-developer-docs/docs/platform-architecture-reference/platform-storage/#s3-compatible-object-storage-dell-emc-elastic-cloud-storage)
+  1. This example uses [S3-compatible Object Storage](/docs/default/component/platform-developer-docs/docs/platform-architecture-reference/platform-storage/#s3-compatible-object-storage-dell-emc-elastic-cloud-storage)
 1. Artifactory
-  1. [Learn how to setup Artifactory](docs/default/component/platform-developer-docs/docs/build-deploy-and-maintain-apps/setup-artifactory-project-repository/)
+  1. [Learn how to setup Artifactory](/docs/default/component/platform-developer-docs/docs/build-deploy-and-maintain-apps/setup-artifactory-project-repository/)
   1. Use Artifactory if your app is an [internal app](distribution_methods.md#internal-apps). [Contact us](contact.md) for help with setting it up. for help with setting it up.
 
 
