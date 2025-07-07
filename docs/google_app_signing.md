@@ -33,7 +33,7 @@ Use the [Play App Signing](https://developer.android.com/studio/publish/app-sign
 
 ## Automated build and signing
 
-Automate your app's build and signing process by using a [GitHub workflow](](https://docs.github.com/en/actions)):
+Automate your app's build and signing process by using a [GitHub workflow](https://docs.github.com/en/actions):
 
 - Store the upload key ([encoded as base64](https://docs.github.com/en/actions/security-guides/encrypted-secrets#storing-base64-binary-blobs-as-secrets)), its alias and the password as a [secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets) in your app's repo. 
 - The [Google signing for React Native apps](google_react_native_signing.md#github-action) page provides an example workflow
