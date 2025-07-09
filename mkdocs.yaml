@@ -19,3 +19,7 @@ nav:
 plugins:
   - techdocs-core
   - git-revision-date-localized
+  - redirects:
+      redirect_maps:
+        'test.md': 'test2.md'
+ 
