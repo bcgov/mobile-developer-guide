@@ -19,3 +19,6 @@ nav:
 plugins:
   - techdocs-core
   - git-revision-date-localized
+  - redirects:
+    redirect_maps:
+      'test.md': 'https://dev.developer.gov.bc.ca/docs/default/component/bc-developer-guide/security/security-and-privacy-compliance-and-guidance/'
