@@ -382,7 +382,7 @@ Provisioning profiles links the bundle id with a certificate and optional associ
 ### Update a provisioning profile
 The Apple Developer Program's certificate is renewed each year. The Developer Experience Team will generate a new certificate and install it into GitHub's organizational secrets for app's using a [CI/CD build](#cicd-build).
 
-If your app uses a CI/CD build, you will need to update your app's provisioning profile with the new certificate. The App Manager role is needed to do the update.
+If your app uses a CI/CD build, you will need to update your app's provisioning profile with the new certificate. You will need the "Access to Certificates, Identifiers & Profile" permission in App Store Connect to do the update.
 
 Follow these steps to update your provisioning profile and install it into your GitHub repo's secrets:
 
