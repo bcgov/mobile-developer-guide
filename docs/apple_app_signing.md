@@ -378,3 +378,20 @@ Provisioning profiles links the bundle id with a certificate and optional associ
 
 
 ![Diagram of development and distribution provisioning profiles. The development provisioning profile uses the bundle id, development certificate and developer device(s). The distribution provisiong profile uses the bundle id and distribution certificate.](assets/apple_provisioning.drawio.svg)
+
+### Update a provisioning profile
+The Apple Developer Program's certificate is renewed each year. The Developer Experience Team will generate a new certificate and install it into GitHub's organizational secrets for app's using a [CI/CD build](#cicd-build).
+
+If your app uses a CI/CD build, you will need to update your app's provisioning profile with the new certificate. You will need the "Access to Certificates, Identifiers & Profile" permission in App Store Connect to do the update.
+
+Follow these steps to update your provisioning profile and install it into your GitHub repo's secrets:
+
+1. Login to https://developer.apple.com
+1. Go to [Profiles](https://developer.apple.com/account/resources/profiles/list) under the Certificates, IDs & Profiles section 
+1. Click on your app's provisioning profile
+1. Click Edit
+1. Choose the new certificate 
+1. Click Save
+1. Download the new provisioning profile
+1. Update your GitHub repo's secrets with the new provisioning profile. You will need to base 64 encode it first. Refer to GitHub's [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) documentation for details.
+1. You may also need to update your exportOptions.plist file with the new UUID of your provisioning profile. Refer to the [exportOptions.plist](#exportoptionsplist) section for more details.
