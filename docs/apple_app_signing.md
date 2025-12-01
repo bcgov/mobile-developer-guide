@@ -393,5 +393,7 @@ Follow these steps to update your provisioning profile and install it into your 
 1. Choose the new certificate 
 1. Click Save
 1. Download the new provisioning profile
-1. Update your GitHub repo's secrets with the new provisioning profile. You will need to base 64 encode it first. Refer to GitHub's [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) documentation for details.
-1. You may also need to update your exportOptions.plist file with the new UUID of your provisioning profile. Refer to the [exportOptions.plist](#exportoptionsplist) section for more details.
+1. Update your GitHub repo's secrets with the new provisioning profile.  
+   1. You will need to base 64 encode it first.  Refer to GitHub's [Installing an Apple certificate on macOS runners for Xcode development](https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development) documentation for details.
+1. You may also need to update your exportOptions.plist file with the new UUID of your provisioning profile. 
+   1. Refer to the [exportOptions.plist](#exportoptionsplist) section for details.
