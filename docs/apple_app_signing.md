@@ -385,7 +385,7 @@ You will need the "Access to Certificates, Identifiers & Profile" permission in 
 
 Here are two ways to download the provisioning profile:
 
-**Dowload in XCode**
+**Download in XCode**
 
 1. Open XCode
 1. Go to your app's "Signing & Capabilities" tab
