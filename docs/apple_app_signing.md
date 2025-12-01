@@ -390,7 +390,7 @@ Here are two ways to download the provisioning profile:
 1. Open XCode
 1. Go to your app's "Signing & Capabilities" tab
 1. Click on the "Provisioning Profile" drop down box
-1. Click "Download "Download Profile..."
+1. Click "Download Profile..."
 1. Select your provisioning profile
 
 ![Screenshot of XCode's "Signing & Capabilities" tab. The Provisioning Profile drop down has been clicked on, revealing an option to "Download Profile"](assets/xcode_provisioning_profile.png)
