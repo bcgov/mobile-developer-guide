@@ -41,7 +41,7 @@ Is the app for:
 
 #### Application/bundle ID 
 
-The Google application ID and Apple bundle ID should be in the form `gov.bc.ca.appname`. 
+The Google application ID and Apple bundle ID should be in the form `ca.bc.gov.appname`. 
 
 The ID must be unique across all apps published under the Province's accounts. The Developer Experience Team will work with you to ensure a unique ID. 
 
