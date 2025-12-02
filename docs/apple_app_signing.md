@@ -65,7 +65,7 @@ The `-exportArchive` flag on the `xcodebuild` command signs the app. This comman
 	<key>teamID</key>
 	<string>TEAM_ID_HERE</string>
 	<key>method</key>
-	<string>app-store</string>
+	<string>app-store-connect</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
@@ -378,6 +378,31 @@ Provisioning profiles links the bundle id with a certificate and optional associ
 
 
 ![Diagram of development and distribution provisioning profiles. The development provisioning profile uses the bundle id, development certificate and developer device(s). The distribution provisiong profile uses the bundle id and distribution certificate.](assets/apple_provisioning.drawio.svg)
+
+### Download a provisioning profile
+
+You will need the "Access to Certificates, Identifiers & Profile" permission in App Store Connect in order to download your app's provisioning profile.
+
+Here are two ways to download the provisioning profile:
+
+**Download in XCode**
+
+1. Open XCode
+1. Go to your app's "Signing & Capabilities" tab
+1. Click on the "Provisioning Profile" drop down box
+1. Click "Download Profile..."
+1. Select your provisioning profile
+
+![Screenshot of XCode's "Signing & Capabilities" tab. The Provisioning Profile drop down has been clicked on, revealing an option to "Download Profile"](assets/xcode_provisioning_profile.png)
+
+**Download from website**
+
+1. Login to https://developer.apple.com
+1. Go to [Profiles](https://developer.apple.com/account/resources/profiles/list) under the Certificates, IDs & Profiles section 
+1. Click on your app's provisioning profile
+1. Click download
+1. Double click on the downloaded file
+
 
 ### Update a provisioning profile
 The Apple Developer Program's certificate is renewed each year. The Developer Experience Team will generate a new certificate and install it into GitHub's organizational secrets for app's using a [CI/CD build](#cicd-build).
