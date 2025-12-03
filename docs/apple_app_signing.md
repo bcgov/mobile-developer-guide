@@ -401,7 +401,7 @@ Here are two ways to download the provisioning profile:
 1. Go to [Profiles](https://developer.apple.com/account/resources/profiles/list) under the Certificates, IDs & Profiles section 
 1. Click on your app's provisioning profile
 1. Click download
-1. Double click on the downloaded file
+1. Double click on the downloaded file to install it
 
 
 ### Update a provisioning profile
