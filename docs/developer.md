@@ -50,15 +50,14 @@ The [bc-wallet-mobile](https://github.com/bcgov/bc-wallet-mobile/blob/main/.gith
 #### Code review 
 [SonarCloud](https://sonarcloud.io/projects) is an automatic code review tool. Use it to detect bugs, vulnerabilities and code smells in your code. Review the [Steps to start using SonarCloud](https://github.com/BCDevOps/sonarqube#sonarcloud) documentation to enable it in your project.
 
-When possible, have another developer on your team review your code. 
+When possible, have another developer on your team review your code.
 
-Are you the only developer on your team? Ask in the [#devops-mobile-development](https://chat.developer.gov.bc.ca/channel/devops-mobile-development) RocketChat channel for another developer to review your code.
+Are you the only developer on your team? Ask in the [mobile-development-howto](https://teams.microsoft.com/l/channel/19%3Af5aac447b80a4a12b7a3fa69ac0e2089%40thread.tacv2/MobileDevelopment-howto?groupId=a80418da-c27b-406e-89ab-7695b61924d8&tenantId=6fdb5200-3d0d-4a8a-b036-d3685e359adc) channel in Microsoft Teams.
 
 #### Linters
-We recommend you use a linter in your project. A linter analyzes source code and identify potential issues, errors or violations of coding standards. If you don't have a linter, ask in the [#devops-mobile-development](https://chat.developer.gov.bc.ca/channel/devops-mobile-development). GitHub also maintains a [collection of linters](https://github.com/collections/clean-code-linters) for you to explore.
+We recommend you use a linter in your project. A linter analyzes source code and identify potential issues, errors or violations of coding standards. If you don't have a linter, ask in the [mobile-development-howto](https://teams.microsoft.com/l/channel/19%3Af5aac447b80a4a12b7a3fa69ac0e2089%40thread.tacv2/MobileDevelopment-howto?groupId=a80418da-c27b-406e-89ab-7695b61924d8&tenantId=6fdb5200-3d0d-4a8a-b036-d3685e359adc) channel. GitHub also maintains a [collection of linters](https://github.com/collections/clean-code-linters) for you to explore.
 
-
-#### Testing your mobile application 
+#### Testing your mobile application
 
 ##### Unit testing
 Developers should write automated unit tests for their code. There are many benefits, including:
@@ -84,8 +83,6 @@ Be familiar with Android and iOS security practices to [take care of information
 
 * [Apple security documentation](https://developer.apple.com/documentation/security)
 * [Android security documentation](https://developer.android.com/training/articles/security-tips)
-
-
 
 ## Accessing the developer accounts
 Your Product Owner will invite you to the Apple and Google developer programs. You'll have access to the apps you're developing in both App Store Connect and Play Console.
