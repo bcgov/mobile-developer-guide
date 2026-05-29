@@ -1,4 +1,3 @@
-![Lifecycle Experimental](https://img.shields.io/badge/Lifecycle-Experimental-339999 "The contents of this repositroy represent work that is in its early stages")
 [![Package Status](https://github.com/bcgov/mobile-developer-guide/actions/workflows/publish.yaml/badge.svg)](https://github.com/bcgov/mobile-developer-guide/actions/workflows/publish.yaml)
 
 # mobile-developer-guide
