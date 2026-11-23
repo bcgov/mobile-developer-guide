@@ -12,4 +12,4 @@ Apple and Google both provide tools for beta testing. For details, see [Testing 
 
 The <a href="../assets/mobile_meetup-10-June-2026.pdf" download>June 10, 2026 Community Meetup</a> includes a presentation on “Real-Device Mobile Testing at Scale,” with a demonstration of end-to-end testing.
 
-BC Procurement Resources maintains a list of third-party vendors that provide security testing. The [Mobile Application Security Testing Advisory Services](https://www2.gov.bc.ca/gov/content/bc-procurement-resources/buy-for-government/goods-and-services-catalogue/im-it-security-services#Mobile_Application_Security_Testing_Advisory_Services) provides more details.
+[BC Procurement Resources](https://www2.gov.bc.ca/gov/content/bc-procurement-resources) maintains a list of third-party vendors that provide security testing. The [Mobile Application Security Testing Advisory Services](https://www2.gov.bc.ca/gov/content/bc-procurement-resources/buy-for-government/goods-and-services-catalogue/im-it-security-services#Mobile_Application_Security_Testing_Advisory_Services) provides more details.
