@@ -12,6 +12,7 @@ nav:
   - Apple app signing: apple_app_signing.md
   - Google app signing: google_app_signing.md
   - Google signing for React Native apps: google_react_native_signing.md
+  - Test your app: testing.md
   - Publish your app: publish.md
   - Encryption export regulations: encryption.md
   - Community meetups: meetups.md
